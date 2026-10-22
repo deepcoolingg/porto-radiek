@@ -1,5 +1,6 @@
 import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/hero/Hero";
+import About from "@/components/about/About";
 import TextMarquee from "@/components/ui/TextMarquee";
 import Works from "@/components/works/Works";
 import Footer from "@/components/ui/Footer";
@@ -11,26 +12,44 @@ export default function Home() {
   return (
     <main className="bg-black">
 
-      <div className="relative z-10 bg-black pb-10 rounded-b-[30px] md:rounded-b-[50px] shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+      <div className="relative z-10 bg-black pb-0 mb-0 rounded-b-[30px] md:rounded-b-[50px] shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
         <Navbar />
         
-        <Hero />
+        <section id="home">
+          <Hero />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
         
         <section className="relative w-full">
           <TextMarquee text="SELECTED WORK" />
         </section>
        
-        <Works />
-        <Statement />
+        <section id="works">
+          <Works />
+        </section>
+
+        <section id="statement">
+          <Statement />
+        </section>
+
         <TextMarquee text="EXPERIENCE" />
-        <Experience />
+        
+        <section id="experience">
+          <Experience />
+        </section>
+
         <UltimatumFAQ />
        
         <div className="h-[50vh] w-full bg-black"></div>
         
       </div>
       
-      <Footer />
+      <section id="contact">
+        <Footer />
+      </section>
       
     </main>
   );

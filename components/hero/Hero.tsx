@@ -54,7 +54,7 @@ export default function Hero() {
             className="mt-8 max-w-[36rem]"
           >
             <p className="text-base leading-relaxed text-[#a1a1aa] md:text-[1.1rem]">
-              A full stack software engineer specializing in backend architecture, web development, and system integration building solid products that perform at scale.
+              A full stack software developer specializing in backend architecture, web development, and system integration building solid products that perform at scale.
             </p>
           </motion.div>
         </div>

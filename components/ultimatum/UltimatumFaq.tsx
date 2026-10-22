@@ -12,7 +12,7 @@ export default function UltimatumFAQ() {
   };
 
   return (
-    <section className="relative z-20 w-full bg-black px-6 py-32 md:px-12 lg:px-24">
+    <section className="relative z-20 w-full bg-black px-6 pt-24 pb-8 md:pt-32 md:pb-12 lg:px-24">
       <div className="mx-auto flex max-w-5xl flex-col gap-16 lg:flex-row lg:gap-24">
         
         <div className="flex flex-col lg:w-1/3">

@@ -1,3 +1,8 @@
+export const aboutData = {
+  heading: "ABOUT ME",
+  description: "I am a Software Developer based in Jakarta, passionate about turning complex problems into intuitive digital products. From building solid backend APIs to crafting seamless frontend experiences, I focus on writing clean, maintainable code that brings ideas to life.",
+};
+
 export const projectsData = [
   {
     title: "Nibiru",
@@ -74,15 +79,7 @@ export const techChipsData = [
   { label: "MySQL", slug: "mysql", bg: "#4479A1", fg: "#ffffff" },
   { label: "PostgreSQL", slug: "postgresql", bg: "#4169E1", fg: "#ffffff" },
   { label: "MongoDB", slug: "mongodb", bg: "#47A248", fg: "#ffffff" },
-
   { label: "Laravel", slug: "laravel", bg: "#FF2D20", fg: "#ffffff" },
-  {
-    label: "Django",
-    slug: "django",
-    bg: "#092E20",
-    fg: "#ffffff",
-    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
-  },
   { label: "Express.js", slug: "express", bg: "#000000", fg: "#ffffff" },
   { label: "Gin", slug: "go", bg: "#0088CC", fg: "#ffffff" },
 

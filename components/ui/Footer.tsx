@@ -50,10 +50,11 @@ export default function Footer() {
               <div className="flex flex-col gap-4">
                 <span className="text-xs font-semibold uppercase tracking-widest text-black/40">Navigation</span>
                 <div className="flex flex-col gap-2">
-                  <a href="#" className="text-sm text-black/80 transition-colors hover:text-black">Home</a>
-                  <a href="#" className="text-sm text-black/80 transition-colors hover:text-black">Work</a>
-                  <a href="#" className="text-sm text-black/80 transition-colors hover:text-black">Services</a>
-                  <a href="#" className="text-sm text-black/80 transition-colors hover:text-black">About</a>
+                  <a href="#home" className="text-sm text-black/80 transition-colors hover:text-black">Home</a>
+                  <a href="#about" className="text-sm text-black/80 transition-colors hover:text-black">About</a>
+                  <a href="#works" className="text-sm text-black/80 transition-colors hover:text-black">Works</a>
+                  <a href="#experience" className="text-sm text-black/80 transition-colors hover:text-black">Experience</a>
+                  <a href="#contact" className="text-sm text-black/80 transition-colors hover:text-black">Contact</a>
                 </div>
               </div>
 
@@ -94,9 +95,11 @@ export default function Footer() {
 
           <div className="mt-16 flex flex-col items-center justify-between border-t border-black/10 pt-6 text-xs text-black/50 md:flex-row">
             <div className="flex gap-4">
-              <a href="#" className="transition-colors hover:text-black">About Us</a>
-              <a href="#" className="transition-colors hover:text-black">Our Work</a>
-              <a href="#" className="transition-colors hover:text-black">Contact</a>
+              <a href="#home" className="transition-colors hover:text-black">Home</a>
+              <a href="#about" className="transition-colors hover:text-black">About</a>
+              <a href="#works" className="transition-colors hover:text-black">Works</a>
+              <a href="#experience" className="transition-colors hover:text-black">Experience</a>
+              <a href="#contact" className="transition-colors hover:text-black">Contact</a>
             </div>
             <span className="mt-4 md:mt-0">© 2026 Radiek Fidiyanto - All rights reserved</span>
           </div>
