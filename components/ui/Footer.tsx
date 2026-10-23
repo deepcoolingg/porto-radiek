@@ -21,31 +21,31 @@ export default function Footer() {
     <>
       <div className="h-[95vh] w-full pointer-events-none"></div>
       
-      <footer className="fixed bottom-0 left-0 flex h-[95vh] w-full flex-col justify-between bg-white px-6 pb-8 pt-32 text-black z-0 md:px-12 lg:px-24">
+      <footer className="fixed bottom-0 left-0 flex h-[95vh] w-full flex-col justify-between bg-white px-6 pb-6 pt-20 text-black z-0 sm:pb-8 sm:pt-24 md:px-12 md:pt-32 lg:px-24">
         
-        <div className="mt-16 flex flex-col items-start gap-8">
-          <h2 className="font-sans text-[2.5rem] font-medium leading-none tracking-tighter sm:text-[4rem] md:text-[5rem] lg:text-[7rem]">
+        <div className="mt-8 flex flex-col items-start gap-6 sm:mt-16 sm:gap-8">
+          <h2 className="font-sans text-[1.75rem] font-medium leading-none tracking-tighter sm:text-[2.5rem] md:text-[4rem] lg:text-[5rem] xl:text-[7rem] break-all sm:break-normal">
             radikfidi20@gmail.com
           </h2>
           
           <button 
             onClick={() => window.open('https://wa.me/6285156057722', '_blank')}
-            className="rounded-full bg-black px-8 py-4 tracking-wide text-white transition-transform hover:scale-105 hover:bg-zinc-800"
+            className="rounded-full bg-black px-6 py-3 text-sm tracking-wide text-white transition-transform hover:scale-105 hover:bg-zinc-800 sm:px-8 sm:py-4"
           >
             Contact Me
           </button>
         </div>
 
         <div className="mt-auto flex w-full flex-col">
-          <div className="mb-10 h-[1px] w-full bg-black/10"></div>
+          <div className="mb-6 h-[1px] w-full bg-black/10 sm:mb-10"></div>
 
-          <div className="flex flex-col justify-between gap-12 lg:flex-row lg:gap-0">
+          <div className="flex flex-col justify-between gap-8 sm:gap-12 lg:flex-row lg:gap-0">
             <div className="flex flex-col gap-2">
               <span className="text-xl tracking-wide md:text-2xl">Muhammad Radiek Fidiyanto</span>
               <span className="text-base italic text-black/50 md:text-lg">Lets create something amazing together.</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-16">
+            <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4 md:gap-16">
               
               <div className="flex flex-col gap-4">
                 <span className="text-xs font-semibold uppercase tracking-widest text-black/40">Location</span>
@@ -87,7 +87,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-16 flex flex-col items-center justify-between border-t border-black/10 pt-6 text-xs text-black/50 md:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-between border-t border-black/10 pt-4 text-xs text-black/50 gap-3 sm:mt-16 sm:pt-6 md:flex-row md:gap-0">
             <div className="flex gap-4">
               <a href="#home" onClick={(e) => scrollToSection(e, 'home')} className="transition-colors hover:text-black">Home</a>
               <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="transition-colors hover:text-black">About</a>
@@ -95,7 +95,7 @@ export default function Footer() {
               <a href="#experience" onClick={(e) => scrollToSection(e, 'experience')} className="transition-colors hover:text-black">Experience</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="transition-colors hover:text-black">Contact</a>
             </div>
-            <span className="mt-4 md:mt-0">© 2026 Radiek Fidiyanto - All rights reserved</span>
+            <span className="md:mt-0">© 2026 Radiek Fidiyanto - All rights reserved</span>
           </div>
         </div>
 

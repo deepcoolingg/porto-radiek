@@ -22,7 +22,7 @@ export default function Statement() {
       
       {/* 2. STICKY WRAPPER: Ngunci elemen di layar selama scroll ada di area 300vh tadi */}
       <div className="sticky top-0 flex h-screen w-full items-center justify-center px-6 md:px-12 lg:px-24">
-        <h2 className="max-w-4xl text-center font-sans text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
+        <h2 className="max-w-4xl text-center font-sans text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl md:text-5xl lg:text-7xl">
           
           {chars.map((char, index) => {
             const start = index / chars.length;

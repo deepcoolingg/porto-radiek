@@ -7,7 +7,7 @@ import { heroData } from "@/lib/data";
 
 export default function Hero() {
   return (
-    <section className="relative flex h-screen w-full flex-col justify-center bg-black px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative flex h-screen w-full flex-col justify-center bg-black px-6 md:px-12 lg:px-24 overflow-hidden will-change-transform">
       
       <div className="absolute inset-0 z-0 opacity-70">
         <FloatingLines />
@@ -19,7 +19,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="fixed top-10 left-6 md:top-12 md:left-12 lg:left-24 z-50 inline-flex w-fit cursor-pointer items-center rounded-2xl border border-white/10 bg-[#121215]/90 px-6 py-3 transition-colors duration-300 hover:border-white/30 hover:bg-white/10"
+        className="fixed top-10 left-6 md:top-12 md:left-12 lg:left-24 z-50 inline-flex w-fit cursor-pointer items-center rounded-2xl border border-white/10 bg-[#121215]/90 px-4 py-2.5 transition-colors duration-300 hover:border-white/30 hover:bg-white/10 sm:px-6 sm:py-3"
       >
         <div className="flex flex-col items-center">
           <span className="text-sm font-bold tracking-wide text-white md:text-base">
@@ -31,7 +31,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      <div className="z-10 flex w-full items-center justify-between gap-4 pointer-events-none mt-16 md:mt-0">
+      <div className="z-10 flex w-full items-center justify-between gap-4 pointer-events-none mt-20 md:mt-0">
         
         <div className="flex w-full max-w-4xl flex-col pointer-events-auto relative">
           
@@ -41,7 +41,7 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col"
           >
-            <h1 className="text-[3.5rem] font-medium leading-[1.05] tracking-tight text-[#f8fafc] sm:text-[4.5rem] lg:text-[5rem] xl:text-[6rem]">
+            <h1 className="text-[2.5rem] font-medium leading-[1.05] tracking-tight text-[#f8fafc] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[6rem]">
               {heroData.heading.line1} <br />
               {heroData.heading.line2} <br />
               <span className="font-serif italic text-white">{heroData.heading.highlight}</span>
@@ -54,7 +54,7 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="mt-8 max-w-[36rem]"
           >
-            <p className="text-base leading-relaxed text-[#a1a1aa] md:text-[1.1rem]">
+            <p className="text-sm leading-relaxed text-[#a1a1aa] sm:text-base md:text-[1.1rem]">
               {heroData.description}
             </p>
           </motion.div>

@@ -49,19 +49,17 @@ export default function Stacks(): ReactNode {
         return { w: Math.max(60, r.width), h: Math.max(24, r.height) }; 
       });
 
-      // Mengambil ukuran wadah secara presisi
       const rect = container.getBoundingClientRect();
       let width = rect.width;
       let height = rect.height;
 
-      // Safeguard: Kalau entah kenapa ngebaca tinggi 1 layar penuh, paksa ke ukuran Bento Box
       if (height > 500) height = 220; 
 
       const engine = Engine.create();
-      engine.gravity.y = 0.8; // Gravitasi dibikin dikit lebih kalem biar jatuhnya elegan
+      engine.gravity.y = 0.8; 
+      engine.enableSleeping = true; // Enable sleeping untuk bodies yang tidak bergerak
       const world = engine.world;
 
-      // Temboknya ditebelin jadi 2000px biar chips kaga bisa nembus ke footer lagi
       const wallThickness = 2000;
       const floor = Bodies.rectangle(width / 2, height - WALL_PAD + wallThickness / 2, width * 3, wallThickness, { isStatic: true });
       const leftWall = Bodies.rectangle(WALL_PAD - wallThickness / 2, height / 2, wallThickness, height * 4, { isStatic: true });
@@ -75,17 +73,15 @@ export default function Stacks(): ReactNode {
         const minX = WALL_PAD + halfW + 4;
         const maxX = width - WALL_PAD - halfW - 4;
         
-        // Disebar acak posisi X-nya
         const x = minX + Math.random() * Math.max(1, maxX - minX);
         
-        // Disebar acak Y-nya (dari -50 sampai -1000px ke atas) biar jatuhnya beruntun kayak hujan
         const y = -50 - (Math.random() * 1000); 
 
         const body = Bodies.rectangle(x, y, w, h, {
           chamfer: { radius: CHIP_RADIUS },
-          restitution: 0.2, // Pantulan dikurangin biar kaga meledak pas tubrukan
+          restitution: 0.2, 
           friction: 0.6,
-          frictionAir: 0.03, // Tahanan udara dinaikin dikit biar jatuhnya stabil
+          frictionAir: 0.03,
           density: 0.002,
           angle: (Math.random() - 0.5) * 0.4,
         });
@@ -110,6 +106,7 @@ export default function Stacks(): ReactNode {
       Events.on(mouseConstraint, "enddrag", () => { container.style.cursor = "grab"; });
 
       const runner = Runner.create();
+      runner.delta = 1000 / 60; // Fix timestep ke 60fps
       Runner.run(runner, engine);
 
       let raf = 0;
@@ -118,6 +115,10 @@ export default function Stacks(): ReactNode {
           const s = states[i];
           const el = chipRefs.current[i];
           if (!s || !el) continue;
+          
+          // Skip update jika body sleeping (tidak bergerak)
+          if (s.body.isSleeping) continue;
+          
           const { x, y } = s.body.position;
           el.style.transform = `translate3d(${x - s.width / 2}px, ${y - s.height / 2}px, 0) rotate(${s.body.angle}rad)`;
         }
@@ -129,7 +130,7 @@ export default function Stacks(): ReactNode {
         const newRect = container.getBoundingClientRect();
         let newW = newRect.width;
         let newH = newRect.height;
-        if (newH > 500) newH = 220; // Safeguard resize
+        if (newH > 500) newH = 220; 
 
         if (newW === width && newH === height) return;
         Body.setPosition(floor, { x: newW / 2, y: newH - WALL_PAD + wallThickness / 2 });
@@ -154,8 +155,7 @@ export default function Stacks(): ReactNode {
   }, [resetKey]);
 
   return (
-    // Kita paku pakai relative dan overflow-hidden di root komponen ini langsung
-    <div className="relative h-full w-full min-h-[220px] overflow-hidden rounded-3xl">
+    <div className="relative h-full w-full min-h-[180px] overflow-hidden rounded-3xl sm:min-h-[220px]">
       
       <span className="absolute left-6 top-6 z-10 text-xs font-bold uppercase tracking-widest text-white/20 pointer-events-none">
         Tech Stack
@@ -195,11 +195,11 @@ export default function Stacks(): ReactNode {
 function ChipPill({ chip }: { chip: Chip }): ReactNode {
   return (
     <div
-      className="inline-flex items-center gap-2 border border-white/10 p-1.5 pr-3 text-xs font-semibold tracking-tight shadow-md"
+      className="inline-flex items-center gap-1.5 border border-white/10 p-1 pr-2 text-[10px] font-semibold tracking-tight shadow-md sm:gap-2 sm:p-1.5 sm:pr-3 sm:text-xs"
       style={{ backgroundColor: chip.bg, color: chip.fg, borderRadius: `${CHIP_RADIUS}px` }}
     >
-      <span className="inline-flex h-6 w-6 items-center justify-center bg-white/95" style={{ borderRadius: `${ICON_RADIUS}px` }}>
-        <img src={chip.iconUrl ?? `https://cdn.simpleicons.org/${chip.slug}`} alt="" width={14} height={14} className="h-3.5 w-3.5" draggable={false} />
+      <span className="inline-flex h-5 w-5 items-center justify-center bg-white/95 sm:h-6 sm:w-6" style={{ borderRadius: `${ICON_RADIUS}px` }}>
+        <img src={chip.iconUrl ?? `https://cdn.simpleicons.org/${chip.slug}`} alt="" width={12} height={12} className="h-3 w-3 sm:h-3.5 sm:w-3.5" draggable={false} />
       </span>
       <span>{chip.label}</span>
     </div>

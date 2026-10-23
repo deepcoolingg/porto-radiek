@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";  
 import { motion, AnimatePresence, animate } from "framer-motion";
 
 const navItems = [
@@ -35,13 +35,17 @@ export default function Navbar() {
       threshold: 0,
     });
 
-    navItems.forEach((item) => {
-      const id = item.href.replace("#", "");
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
+    // Delay observer initialization untuk performa awal lebih baik
+    const timeoutId = setTimeout(() => {
+      navItems.forEach((item) => {
+        const id = item.href.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) observer.observe(element);
+      });
+    }, 500);
 
     return () => {
+      clearTimeout(timeoutId);
       navItems.forEach((item) => {
         const id = item.href.replace("#", "");
         const element = document.getElementById(id);
@@ -82,7 +86,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(true)}
-            className="flex cursor-pointer items-center justify-between gap-12 px-8 py-4 transition-colors hover:bg-white/5"
+            className="flex cursor-pointer items-center justify-between gap-6 px-5 py-3 transition-colors hover:bg-white/5 sm:gap-12 sm:px-8 sm:py-4"
           >
             <span className="text-base font-bold tracking-wide md:text-lg">{activeTab}</span>
             
@@ -110,9 +114,9 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="flex min-w-[240px] flex-col p-8"
+            className="flex min-w-[200px] flex-col p-6 sm:min-w-[240px] sm:p-8"
           >
-            <div className="flex items-center justify-between pb-6">
+            <div className="flex items-center justify-between pb-4 sm:pb-6">
               <span className="text-base font-bold tracking-wide md:text-lg text-white">
                 {activeTab}
               </span>
@@ -141,7 +145,7 @@ export default function Navbar() {
               </button>
             </div>
 
-            <div className="flex flex-col gap-6 pt-2">
+            <div className="flex flex-col gap-5 pt-2 sm:gap-6">
               {navItems.map((item) => {
                 const isActive = activeTab === item.name;
                 return (

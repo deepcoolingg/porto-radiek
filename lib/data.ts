@@ -71,36 +71,23 @@ export const faqsData = [
 ];  
 
 export const techChipsData = [
-
-  { label: "HTML5", slug: "html5", bg: "#E34F26", fg: "#ffffff" },
-  { 
-  label: "CSS3", 
-  slug: "css3", 
-  bg: "#1572B6", 
-  fg: "#ffffff",
-  iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-  },
   { label: "JavaScript", slug: "javascript", bg: "#F7DF1E", fg: "#000000" },
+  { 
+  label: "Java", 
+  slug: "java", 
+  bg: "#007396", 
+  fg: "#ffffff",
+  iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+  },
+  { label: "Kotlin", slug: "kotlin", bg: "#0095D5", fg: "#ffffff" },
   { label: "TypeScript", slug: "typescript", bg: "#3178C6", fg: "#ffffff" },
-  
-  { label: "React", slug: "react", bg: "#20232a", fg: "#61DAFB" },
-  { label: "Next.js", slug: "nextdotjs", bg: "#000000", fg: "#ffffff" },
-  { label: "Vue", slug: "vuedotjs", bg: "#4FC08D", fg: "#ffffff" },
-  { label: "Angular", slug: "angular", bg: "#DD0031", fg: "#ffffff" },
-  { label: "Vite", slug: "vite", bg: "#646CFF", fg: "#ffffff" },
   { label: "Tailwind", slug: "tailwindcss", bg: "#0F172A", fg: "#38B2AC" },
-  { label: "Bootstrap", slug: "bootstrap", bg: "#7952B3", fg: "#ffffff" },
-
   { label: "Golang", slug: "go", bg: "#00ADD8", fg: "#ffffff" },
   { label: "PHP", slug: "php", bg: "#777BB4", fg: "#ffffff" },
   { label: "Python", slug: "python", bg: "#3776AB", fg: "#ffffff" },
   { label: "MySQL", slug: "mysql", bg: "#4479A1", fg: "#ffffff" },
   { label: "PostgreSQL", slug: "postgresql", bg: "#4169E1", fg: "#ffffff" },
   { label: "MongoDB", slug: "mongodb", bg: "#47A248", fg: "#ffffff" },
-  { label: "Laravel", slug: "laravel", bg: "#FF2D20", fg: "#ffffff" },
-  { label: "Express.js", slug: "express", bg: "#000000", fg: "#ffffff" },
-  { label: "Gin", slug: "go", bg: "#0088CC", fg: "#ffffff" },
-
   { label: "Git", slug: "git", bg: "#F05032", fg: "#ffffff" },
   { label: "GitHub", slug: "github", bg: "#181717", fg: "#ffffff" },
   { label: "Docker", slug: "docker", bg: "#2496ED", fg: "#ffffff" },

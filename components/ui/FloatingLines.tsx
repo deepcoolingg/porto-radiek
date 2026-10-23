@@ -329,7 +329,13 @@ export default function FloatingLines({
     const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
     camera.position.z = 1;
 
-    const renderer = new WebGLRenderer({ antialias: true, alpha: false });
+    const renderer = new WebGLRenderer({ 
+      antialias: false, // Disable antialiasing untuk performa lebih baik
+      alpha: false,
+      powerPreference: 'high-performance', // Prioritas performa
+      stencil: false, // Disable stencil buffer (tidak dipakai)
+      depth: false // Disable depth buffer (tidak dipakai untuk 2D)
+    });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
@@ -462,8 +468,20 @@ export default function FloatingLines({
     }
 
     let raf = 0;
-    const renderLoop = () => {
+    let lastTime = 0;
+    const targetFPS = 60;
+    const frameTime = 1000 / targetFPS;
+    
+    const renderLoop = (currentTime: number) => {
       if (!active) return;
+
+      // Throttle to 60fps max
+      const elapsed = currentTime - lastTime;
+      if (elapsed < frameTime) {
+        raf = requestAnimationFrame(renderLoop);
+        return;
+      }
+      lastTime = currentTime - (elapsed % frameTime);
 
       uniforms.iTime.value = clock.getElapsedTime();
 
@@ -483,7 +501,7 @@ export default function FloatingLines({
       renderer.render(scene, camera);
       raf = requestAnimationFrame(renderLoop);
     };
-    renderLoop();
+    renderLoop(0);
 
     return () => {
       active = false;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import {
   motion,
   useScroll,
@@ -20,7 +20,7 @@ interface TextMarqueeProps {
   text: string;
 }
 
-export default function TextMarquee({ text }: TextMarqueeProps) {
+const TextMarquee = ({ text }: TextMarqueeProps) => {
   const baseX = useMotionValue(0);
   
   const { scrollY } = useScroll();
@@ -50,7 +50,7 @@ export default function TextMarquee({ text }: TextMarqueeProps) {
   const repeatedText = Array(4).fill(text);
 
   return (
-    <div className="relative flex w-full overflow-hidden bg-black py-8 md:py-16">
+    <div className="relative flex w-full overflow-hidden bg-black py-4 sm:py-8 md:py-16">
       <motion.div 
         className="flex whitespace-nowrap w-fit" 
         style={{ x: useTransform(baseX, (v) => `${v}%`) }}
@@ -58,7 +58,7 @@ export default function TextMarquee({ text }: TextMarqueeProps) {
         <div className="flex items-center">
           {repeatedText.map((item, index) => (
             <div key={`first-${index}`} className="flex items-center">
-              <span className="mx-6 font-sans italic tracking-tighter text-white text-[7rem] md:text-[10rem] lg:text-[14rem] uppercase">
+              <span className="mx-4 font-sans italic tracking-tighter text-white text-[4rem] sm:text-[5.5rem] md:text-[10rem] lg:text-[14rem] uppercase sm:mx-6">
                 {item}
               </span>
             </div>
@@ -68,7 +68,7 @@ export default function TextMarquee({ text }: TextMarqueeProps) {
         <div className="flex items-center">
           {repeatedText.map((item, index) => (
             <div key={`second-${index}`} className="flex items-center">
-              <span className="mx-6 font-sans italic tracking-tighter text-white text-[7rem] md:text-[10rem] lg:text-[14rem] uppercase">
+              <span className="mx-4 font-sans italic tracking-tighter text-white text-[4rem] sm:text-[5.5rem] md:text-[10rem] lg:text-[14rem] uppercase sm:mx-6">
                 {item}
               </span>
             </div>
@@ -77,4 +77,6 @@ export default function TextMarquee({ text }: TextMarqueeProps) {
       </motion.div>
     </div>
   );
-}
+};
+
+export default memo(TextMarquee);

@@ -12,14 +12,14 @@ export default function UltimatumFAQ() {
   };
 
   return (
-    <section className="relative z-20 w-full bg-black px-6 pt-24 pb-8 md:pt-32 md:pb-12 lg:px-24">
-      <div className="mx-auto flex max-w-5xl flex-col gap-16 lg:flex-row lg:gap-24">
+    <section className="relative z-20 w-full bg-black px-6 pt-16 pb-8 sm:pt-24 md:px-12 md:pt-32 md:pb-12 lg:px-24">
+      <div className="mx-auto flex max-w-5xl flex-col gap-10 sm:gap-16 lg:flex-row lg:gap-24">
         
         <div className="flex flex-col lg:w-1/3">
-          <h2 className="font-sans text-4xl font-medium tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h2 className="font-sans text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
             The Reality Check.
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-white/60">
+          <p className="mt-4 text-base leading-relaxed text-white/60 sm:mt-6 sm:text-lg">
             Before we partner up, let’s address the elephant in the room. Why precision in software engineering matters.
           </p>
         </div>
@@ -34,9 +34,9 @@ export default function UltimatumFAQ() {
               <div key={index} className="flex flex-col border-b border-white/10">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="flex w-full items-center justify-between py-6 text-left transition-colors hover:text-white/80"
+                  className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-white/80 sm:py-6"
                 >
-                  <span className={`text-lg font-medium md:text-xl lg:text-2xl ${isOpen ? 'text-white' : 'text-white/70'}`}>
+                  <span className={`text-base font-medium sm:text-lg md:text-xl lg:text-2xl ${isOpen ? 'text-white' : 'text-white/70'}`}>
                     {faq.question}
                   </span>
                   <div className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/5">
@@ -69,7 +69,7 @@ export default function UltimatumFAQ() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-8 pr-12 text-base leading-relaxed text-white/50 md:text-lg">
+                      <p className="pb-6 pr-8 text-sm leading-relaxed text-white/50 sm:pb-8 sm:pr-12 sm:text-base md:text-lg">
                         {faq.answer}
                       </p>
                     </motion.div>

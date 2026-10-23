@@ -24,11 +24,11 @@ export default function About() {
       {/* Pembungkus sticky biar layarnya "berhenti" di tempat */}
       <div className="sticky top-0 flex h-screen w-full items-center px-6 md:px-12 lg:px-24">
         
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 md:flex-row md:gap-24">
+          <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 md:flex-row md:gap-24">
           
           {/* Label Kiri */}
           <div className="md:w-1/4">
-            <h2 className="text-xl font-bold uppercase tracking-widest text-white/40">
+            <h2 className="text-lg font-bold uppercase tracking-widest text-white/40 sm:text-xl">
               {aboutData.heading}
             </h2>
             <div className="mt-6 h-[1px] w-12 bg-white/20" />
@@ -36,7 +36,7 @@ export default function About() {
 
           {/* Deskripsi Kanan (Reveal per kata) */}
           <div className="md:w-3/4">
-            <p className="flex flex-wrap font-sans text-2xl font-medium leading-relaxed tracking-tight md:text-4xl lg:text-5xl">
+            <p className="flex flex-wrap font-sans text-xl font-medium leading-relaxed tracking-tight sm:text-2xl md:text-4xl lg:text-5xl">
               {words.map((word, i) => {
                 // Bagi porsi scroll secara merata ke setiap kata
                 const start = i / words.length;
