@@ -1,3 +1,21 @@
+export const heroData = {
+  badge: {
+    title: "Radiek Portfolio",
+    subtitle: "Developer",
+  },
+  heading: {
+    line1: "Crafting scalable software",
+    line2: "and high performance",
+    highlight: "digital ecosystems.",
+  },
+  description: "A full stack software developer specializing in backend architecture, web development, and system integration building solid products that perform at scale.",
+  profile: {
+    name: "Radiek Fidiyanto",
+    title: "Software Developer", 
+    image: "/profile.jpeg", 
+  },
+};
+
 export const aboutData = {
   heading: "ABOUT ME",
   description: "I am a Software Developer based in Jakarta, passionate about turning complex problems into intuitive digital products. From building solid backend APIs to crafting seamless frontend experiences, I focus on writing clean, maintainable code that brings ideas to life.",
@@ -36,7 +54,7 @@ export const projectsData = [
 export const faqsData = [
   {
     question: "Why shouldn't I just hire a standard web developer?",
-    answer: "A standard developer builds features to make things work temporarily. I engineer digital ecosystems. My focus is on scalable backend architecture and clean front-end execution, ensuring your product doesn't just look good, but survives heavy traffic and complex business logic."
+    answer: "A standard developer builds features to make things work temporarily. I engineer digital ecosystems. My focus is on scalable backend architecture and clean front end execution, ensuring your product doesn't just look good, but survives heavy traffic and complex business logic."
   },
   {
     question: "What's the actual cost of bad system architecture?",
@@ -44,7 +62,7 @@ export const faqsData = [
   },
   {
     question: "Do you only handle backend engineering?",
-    answer: "No. I am a Full Stack Software Engineer. While my core strength lies in robust backend systems (Go, PHP, Laravel), I seamlessly integrate them with high-performance, interactive front-ends using React, Next.js, and Tailwind CSS—giving you a complete, end-to-end solution."
+    answer: "No. I am a Full Stack Software Developer. While my core strength lies in robust backend systems (Go, PHP, JavaScript), I seamlessly integrate them with high performance, interactive front ends using React, Next.js, and Tailwind CSS, giving you a complete solution."
   },
   {
     question: "What happens if we don't prioritize scalable code?",

@@ -1,20 +1,72 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence, animate } from "framer-motion";
 
 const navItems = [
-  { name: "Home", href: "#" },
-  { name: "Work", href: "#work" },
-  { name: "Services", href: "#services" },
-  { name: "About us", href: "#about" },
-  { name: "Testimonials", href: "#testimonials" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Works", href: "#works" },
+  { name: "Experience", href: "#experience" },
   { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Home");
+
+  useEffect(() => {
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const activeItem = navItems.find(
+            (item) => item.href.replace("#", "") === entry.target.id
+          );
+          if (activeItem) {
+            setActiveTab(activeItem.name);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, {
+      root: null,
+      rootMargin: "-30% 0px -50% 0px", 
+      threshold: 0,
+    });
+
+    navItems.forEach((item) => {
+      const id = item.href.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      navItems.forEach((item) => {
+        const id = item.href.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, []);
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string, name: string) => {
+    e.preventDefault();
+    setActiveTab(name);
+    setIsOpen(false); 
+    
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.scrollY;
+        animate(window.scrollY, y, {
+          duration: 1, 
+          ease: [0.16, 1, 0.3, 1],
+          onUpdate: (latest) => window.scrollTo(0, latest),
+        });
+      }
+    }, 150);
+  };
 
   return (
     <motion.div
@@ -96,10 +148,8 @@ export default function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    onClick={() => {
-                      setActiveTab(item.name);
-                      setIsOpen(false); 
-                    }}
+                    // Panggil fungsinya di sini
+                    onClick={(e) => handleSmoothScroll(e, item.href.replace('#', ''), item.name)}
                     className={`text-lg font-bold tracking-wide w-fit transition-all ${
                       isActive
                         ? "text-white underline underline-offset-8 decoration-2"

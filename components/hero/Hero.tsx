@@ -3,13 +3,14 @@
 import { motion } from "framer-motion";
 import FloatingLines from "@/components/ui/FloatingLines";
 import ProfileCard from "@/components/ui/ProfileCard";
+import { heroData } from "@/lib/data";
+
 export default function Hero() {
   return (
     <section className="relative flex h-screen w-full flex-col justify-center bg-black px-6 md:px-12 lg:px-24 overflow-hidden">
       
       <div className="absolute inset-0 z-0 opacity-70">
-        <FloatingLines
-        />
+        <FloatingLines />
       </div>
 
       <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-[5] pointer-events-none" />
@@ -21,11 +22,11 @@ export default function Hero() {
         className="fixed top-10 left-6 md:top-12 md:left-12 lg:left-24 z-50 inline-flex w-fit cursor-pointer items-center rounded-2xl border border-white/10 bg-[#121215]/90 px-6 py-3 transition-colors duration-300 hover:border-white/30 hover:bg-white/10"
       >
         <div className="flex flex-col items-center">
-          <span className="text-sm text-bold tracking-wide text-white md:text-base">
-            Radiek Portfolio
+          <span className="text-sm font-bold tracking-wide text-white md:text-base">
+            {heroData.badge.title}
           </span>
           <span className="text-xs text-white/70">
-            Developer
+            {heroData.badge.subtitle}
           </span>
         </div>
       </motion.div>
@@ -41,9 +42,9 @@ export default function Hero() {
             className="flex flex-col"
           >
             <h1 className="text-[3.5rem] font-medium leading-[1.05] tracking-tight text-[#f8fafc] sm:text-[4.5rem] lg:text-[5rem] xl:text-[6rem]">
-              Crafting scalable software <br />
-              and high performance <br />
-              <span className="font-serif italic text-white">digital ecosystems.</span>
+              {heroData.heading.line1} <br />
+              {heroData.heading.line2} <br />
+              <span className="font-serif italic text-white">{heroData.heading.highlight}</span>
             </h1>
           </motion.div>
 
@@ -54,7 +55,7 @@ export default function Hero() {
             className="mt-8 max-w-[36rem]"
           >
             <p className="text-base leading-relaxed text-[#a1a1aa] md:text-[1.1rem]">
-              A full stack software developer specializing in backend architecture, web development, and system integration building solid products that perform at scale.
+              {heroData.description}
             </p>
           </motion.div>
         </div>
@@ -66,9 +67,9 @@ export default function Hero() {
           className="hidden shrink-0 ml-auto pointer-events-auto lg:block"
         >
           <ProfileCard
-            name="Radiek Fidiyanto" 
-            title="Software Engineer"
-            image="/profile.jpeg" 
+            name={heroData.profile.name} 
+            title={heroData.profile.title}
+            image={heroData.profile.image} 
             showUserInfo={true}
             enableTilt={true}
             enableMobileTilt={false}
@@ -78,15 +79,6 @@ export default function Hero() {
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="hidden shrink-0 ml-auto pointer-events-auto lg:block"
-        >
-          {/* ... */}
-        </motion.div>
-
       </div>
 
       <motion.div
@@ -94,9 +86,7 @@ export default function Hero() {
          animate={{ opacity: 1 }}
          transition={{ delay: 1, duration: 1 }}
          className="absolute bottom-10 left-6 z-10 md:bottom-12 md:left-12 lg:left-24 pointer-events-none"
-      >
-      </motion.div>
-
+      />
     </section>
   );
 }
