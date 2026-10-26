@@ -4,71 +4,74 @@ export const heroData = {
     subtitle: "Developer",
   },
   heading: {
-    line1: "Crafting scalable software",
-    line2: "and high performance",
-    highlight: "digital ecosystems.",
+    line1: "I build software",
+    line2: "that holds up",
+    highlight: "under real use.",
   },
-  description: "A full stack software developer specializing in backend architecture, web development, and system integration building solid products that perform at scale.",
+  description: "A full stack developer focused on backend architecture, web development, and system integration. I care less about things that just work, and more about things that keep working — even when traffic spikes or business logic gets messy.",
   profile: {
     name: "Radiek Fidiyanto",
-    title: "Software Developer", 
-    image: "/profile.jpeg", 
+    title: "Software Developer",
+    image: "/profile.jpeg",
   },
 };
-
+ 
 export const aboutData = {
   heading: "ABOUT ME",
-  description: "I am a Software Developer based in Jakarta, passionate about turning complex problems into intuitive digital products. From building solid backend APIs to crafting seamless frontend experiences, I focus on writing clean, maintainable code that brings ideas to life.",
+  description: "I'm a software developer based in Jakarta. I like taking something complicated and turning it into a product that's actually simple to use. That could mean building a backend API that doesn't fall over under load, or putting together a frontend that just feels right to use. Either way, I try to write code that's clean enough for someone else — or future me — to pick up without wanting to start over.",
 };
-
+ 
 export const projectsData = [
   {
     title: "Nibiru",
+    url: "https://github.com/deepcoolingg/nibiru",
     category: "E-Commerce Backend Platform",
     year: "2026",
-    description: "Engineered a robust e-commerce backend for merchandise and digital literary works using PHP (Laravel), PostgreSQL, Xendit payment processing, and Biteship logistics APIs.",
+    description: "Built the backend for an e-commerce platform selling merchandise and digital literary works. Used PHP (Laravel) and PostgreSQL for the core system, with Xendit handling payments and Biteship handling shipping logistics.",
     role: "Backend Developer",
     tech: ["Laravel", "PostgreSQL", "Xendit API", "Biteship API"],
     imagePlaceholder: "/nibiru.png",
   },
   {
     title: "JakEdu",
+    url: "https://edu.jakarta.go.id/home/site/",
     category: "Educational Platform API",
     year: "2025 - 2026",
-    description: "Architected and maintained scalable backend RESTful APIs using Golang and PostgreSQL for the JakEdu educational platform during my internship at Pusdatin Dinas Pendidikan DKI Jakarta.",
+    description: "Built and maintained the backend REST APIs for JakEdu, an educational platform, using Golang and PostgreSQL. Part of my internship at Pusdatin Dinas Pendidikan DKI Jakarta.",
     role: "Backend Developer",
     tech: ["Golang", "PostgreSQL", "REST API", "Backend Integration"],
     imagePlaceholder: "/jakedu.png",
   },
   {
     title: "Figtries",
+    url: "https://figtries.com/",
     category: "Landing Page & Custom CMS",
     year: "2026",
-    description: "Developed a high performance landing page and a custom Content Management System (CMS) for a digital systems architecture agency. Optimized for SEO, custom metadata, and fast indexing.",
+    description: "Built a fast landing page and a custom CMS for a digital systems architecture agency, with attention to SEO, metadata, and page load speed.",
     role: "Fullstack Developer",
     tech: ["Next.js", "CMS", "SEO", "Tailwind CSS"],
     imagePlaceholder: "/figtries.png",
   }
 ];
-
+ 
 export const faqsData = [
   {
-    question: "Why shouldn't I just hire a standard web developer?",
-    answer: "A standard developer builds features to make things work temporarily. I engineer digital ecosystems. My focus is on scalable backend architecture and clean front end execution, ensuring your product doesn't just look good, but survives heavy traffic and complex business logic."
+    question: "Why not just hire any web developer?",
+    answer: "You can — for a simple site, that's probably fine. But once your product needs to handle real traffic, more complex logic, or just needs to grow over time, the difference starts to show: how easy it is to add a feature, fix a bug, or scale without rewriting half the system. That's the part I focus on getting right from the start."
   },
   {
-    question: "What's the actual cost of bad system architecture?",
-    answer: "Technical debt. Cutting corners on your database structure (PostgreSQL/MySQL) or API logic now means costly rewrites, server crashes, and security vulnerabilities later. I build the foundation right the first time so you can scale without bottlenecks."
+    question: "What actually happens if the architecture isn't solid?",
+    answer: "Usually not a crash on day one — it's slower than that. Shortcuts in the database structure or API design tend to pile up as technical debt: things get harder to change, bugs get harder to trace, and eventually you're looking at a rewrite instead of an update. I'd rather spend a bit more time upfront so you're not paying for it later."
   },
   {
-    question: "Do you only handle backend engineering?",
-    answer: "No. I am a Full Stack Software Developer. While my core strength lies in robust backend systems (Go, PHP, JavaScript), I seamlessly integrate them with high performance, interactive front ends using React, Next.js, and Tailwind CSS, giving you a complete solution."
+    question: "Do you only work on backend?",
+    answer: "No, I work across the stack. Backend is where I'm strongest (Go, PHP, JavaScript), but I also build frontends with React, Next.js, and Tailwind CSS — so I can take a project from the database up to the interface without needing to hand it off halfway."
   },
   {
-    question: "What happens if we don't prioritize scalable code?",
-    answer: "Your platform will eventually break under its own weight. Features will take longer to build, bugs will multiply, and user experience will plummet. Hiring a strategic engineer isn't an expense; it's an investment in your product's survival."
+    question: "Does code quality really matter that much early on?",
+    answer: "More than people expect. Skipping it doesn't break anything right away, which is exactly why it's easy to ignore — but over time, features take longer, bugs multiply, and more effort goes into maintaining than building. Getting it right early is usually cheaper than fixing it later."
   }
-];  
+]; 
 
 export const techChipsData = [
   { label: "JavaScript", slug: "javascript", bg: "#F7DF1E", fg: "#000000" },
@@ -96,14 +99,13 @@ export const techChipsData = [
   { label: "GraphQL", slug: "graphql", bg: "#E10098", fg: "#ffffff" },
 ];
 
-
 export const experienceData = {
   header: {
     title: "Education & Experience",
     resumeUrl: "/Radiek_Fidiyanto_CV.pdf",
   },
   pusdatin: {
-    description: "Engineered and maintained the backend API architecture for the JakEdu platform, ensuring solid system integration.",
+    description: "Built and maintained the backend API architecture for the JakEdu platform, working with the team to keep the system integrated and running smoothly.",
     organization: "Pusat Data dan Informasi Dinas Pendidikan Provinsi DKI Jakarta",
     roleAndDate: "Web Developer Intern • Oct 2025 - Jan 2026",
     logoPath: "/pusdatin.png",
@@ -124,7 +126,7 @@ export const experienceData = {
     }
   },
   organization: {
-    description: "Led member development initiatives and engineered training curricula for the student body.",
+    description: "Helped run member development programs and put together training materials for the student body.",
     roles: [
       {
         title: "Staff of HRD Department",
