@@ -5,10 +5,10 @@ export const heroData = {
   },
   heading: {
     line1: "I build software",
-    line2: "that holds up",
-    highlight: "under real use.",
+    line2: "that works reliably,",
+    highlight: "even under pressure.",
   },
-  description: "A full stack developer focused on backend architecture, web development, and system integration. I care less about things that just work, and more about things that keep working — even when traffic spikes or business logic gets messy.",
+  description: "Full stack developer focused on backend architecture, web development, and system integration. I enjoy building things that keep working well not just on launch day, but as traffic and complexity grow.",
   profile: {
     name: "Radiek Fidiyanto",
     title: "Software Developer",
@@ -18,36 +18,36 @@ export const heroData = {
  
 export const aboutData = {
   heading: "ABOUT ME",
-  description: "I'm a software developer based in Jakarta. I like taking something complicated and turning it into a product that's actually simple to use. That could mean building a backend API that doesn't fall over under load, or putting together a frontend that just feels right to use. Either way, I try to write code that's clean enough for someone else — or future me — to pick up without wanting to start over.",
+  description: "I'm a software developer based in Jakarta. I like turning complex problems into simple, usable products whether that's a backend API that handles load well, or a frontend that just feels right to use. I try to write clean code that's easy for others to work with.",
 };
  
 export const projectsData = [
-  {
-    title: "Nibiru",
-    url: "https://github.com/deepcoolingg/nibiru",
-    category: "E-Commerce Backend Platform",
-    year: "2026",
-    description: "Built the backend for an e-commerce platform selling merchandise and digital literary works. Used PHP (Laravel) and PostgreSQL for the core system, with Xendit handling payments and Biteship handling shipping logistics.",
-    role: "Backend Developer",
-    tech: ["Laravel", "PostgreSQL", "Xendit API", "Biteship API"],
-    imagePlaceholder: "/nibiru.png",
-  },
-  {
+    {
     title: "JakEdu",
-    url: "https://edu.jakarta.go.id/home/site/",
+    url: "https://edu.jakarta.go.id",
     category: "Educational Platform API",
     year: "2025 - 2026",
-    description: "Built and maintained the backend REST APIs for JakEdu, an educational platform, using Golang and PostgreSQL. Part of my internship at Pusdatin Dinas Pendidikan DKI Jakarta.",
+    description: "JakEdu is the internal platform Pusdatin Dinas Pendidikan DKI Jakarta uses to manage access across several education systems (Selaras, KKI, and Dapodik). Access used to be handled manually through direct database queries. I built a centralized Master Data module (Users, Applications, Roles) backed by a PostgreSQL schema using Role Based Access Control, so admins can grant or revoke access in a few clicks and see clearly who has access to what.",
     role: "Backend Developer",
     tech: ["Golang", "PostgreSQL", "REST API", "Backend Integration"],
     imagePlaceholder: "/jakedu.png",
   },
   {
+    title: "Nibiru",
+    url: "https://github.com/deepcoolingg/nibiru",
+    category: "E-Commerce Backend Platform",
+    year: "2026",
+    description: "Nibiru is an e-commerce platform for selling merchandise and digital literary works. I built both the user-facing storefront and the admin panel, using Laravel and PostgreSQL, with Xendit for payments and Biteship for shipping.",
+    role: "Backend Developer",
+    tech: ["Laravel", "PostgreSQL", "Xendit API", "Biteship API"],
+    imagePlaceholder: "/nibiru.png",
+  },
+  {
     title: "Figtries",
-    url: "https://figtries.com/",
+    url: "https://figtries.com",
     category: "Landing Page & Custom CMS",
     year: "2026",
-    description: "Built a fast landing page and a custom CMS for a digital systems architecture agency, with attention to SEO, metadata, and page load speed.",
+    description: "Figtries is a company profile landing page and CMS. I built both, with a CMS that lets the client upload and update their own content without needing a developer.",
     role: "Fullstack Developer",
     tech: ["Next.js", "CMS", "SEO", "Tailwind CSS"],
     imagePlaceholder: "/figtries.png",
@@ -57,21 +57,21 @@ export const projectsData = [
 export const faqsData = [
   {
     question: "Why not just hire any web developer?",
-    answer: "You can — for a simple site, that's probably fine. But once your product needs to handle real traffic, more complex logic, or just needs to grow over time, the difference starts to show: how easy it is to add a feature, fix a bug, or scale without rewriting half the system. That's the part I focus on getting right from the start."
+    answer: "You can, for a simple site. But once your product needs to handle real traffic or grow over time, the difference shows: how easy it is to add a feature or fix a bug without breaking everything else. That's what I focus on getting right from the start."
   },
   {
-    question: "What actually happens if the architecture isn't solid?",
-    answer: "Usually not a crash on day one — it's slower than that. Shortcuts in the database structure or API design tend to pile up as technical debt: things get harder to change, bugs get harder to trace, and eventually you're looking at a rewrite instead of an update. I'd rather spend a bit more time upfront so you're not paying for it later."
+    question: "What happens if the architecture isn't solid?",
+    answer: "Nothing breaks right away that's the tricky part. Shortcuts in the database or API design pile up over time, making changes slower and bugs harder to fix. I'd rather spend a bit more time early so you don't pay for it later."
   },
   {
     question: "Do you only work on backend?",
-    answer: "No, I work across the stack. Backend is where I'm strongest (Go, PHP, JavaScript), but I also build frontends with React, Next.js, and Tailwind CSS — so I can take a project from the database up to the interface without needing to hand it off halfway."
+    answer: "No, I work across the stack. Backend is my strongest area (Go, PHP, JavaScript), but I also build frontends with React, Next.js, and Tailwind CSS so I can handle a project end to end."
   },
   {
-    question: "Does code quality really matter that much early on?",
-    answer: "More than people expect. Skipping it doesn't break anything right away, which is exactly why it's easy to ignore — but over time, features take longer, bugs multiply, and more effort goes into maintaining than building. Getting it right early is usually cheaper than fixing it later."
+    question: "Does code quality matter that early?",
+    answer: "More than people expect. Skipping it doesn't show up immediately, but over time it slows everything down, more bugs, slower features, more time spent fixing instead of building. Getting it right early is usually cheaper in the long run."
   }
-]; 
+];
 
 export const techChipsData = [
   { label: "JavaScript", slug: "javascript", bg: "#F7DF1E", fg: "#000000" },
@@ -105,7 +105,7 @@ export const experienceData = {
     resumeUrl: "/Radiek_Fidiyanto_CV.pdf",
   },
   pusdatin: {
-    description: "Built and maintained the backend API architecture for the JakEdu platform, working with the team to keep the system integrated and running smoothly.",
+    description: "Built and maintained the backend API for the JakEdu platform, working with the team to keep the system running smoothly.",
     organization: "Pusat Data dan Informasi Dinas Pendidikan Provinsi DKI Jakarta",
     roleAndDate: "Web Developer Intern • Oct 2025 - Jan 2026",
     logoPath: "/pusdatin.png",
@@ -126,7 +126,7 @@ export const experienceData = {
     }
   },
   organization: {
-    description: "Helped run member development programs and put together training materials for the student body.",
+    description: "Took part in organizing member development programs for the student body, from onboarding new members to putting together training materials. Also helped plan activities meant to build members soft skills and keep them engaged throughout the year.",
     roles: [
       {
         title: "Staff of HRD Department",

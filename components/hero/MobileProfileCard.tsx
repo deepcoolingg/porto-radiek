@@ -12,7 +12,7 @@ export default function MobileProfileCard() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full max-w-[30px] scale-[0.85] sm:max-w-[120px] sm:scale-70"
+        className="w-full max-w-75 scale-[0.85] sm:max-w-30 sm:scale-70"
       >
         <ProfileCard
           name={heroData.profile.name}

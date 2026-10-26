@@ -22,7 +22,25 @@ export default function SelectedWorks() {
               className={`flex flex-col gap-6 lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} sm:gap-8 lg:gap-20`}
             >
               
-              <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-[#121215] lg:w-3/5">
+              <div className="group relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-[#121215] lg:w-3/5">
+                {project.url ? (
+                <a 
+                  href={project.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="block h-full w-full"
+                >
+                  <Image 
+                    src={project.imagePlaceholder} 
+                    alt={project.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 50vw"
+                    priority={index === 0}
+                    quality={85}
+                  />
+                </a>
+              ) : (
                 <Image 
                   src={project.imagePlaceholder} 
                   alt={project.title} 
@@ -32,6 +50,7 @@ export default function SelectedWorks() {
                   priority={index === 0}
                   quality={85}
                 />
+              )}
 
                 <div className="absolute inset-0 bg-black/0 pointer-events-none transition-colors duration-500 group-hover:bg-black/20"></div>
               </div>
