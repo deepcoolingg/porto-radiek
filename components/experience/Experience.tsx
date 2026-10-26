@@ -24,12 +24,13 @@ export default function Experience() {
         </a>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-[repeat(3,minmax(220px,1fr))]">
+      <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-[repeat(3,minmax(220px,1fr))] will-change-transform">
         
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-2 lg:col-span-2 lg:row-span-2"
         >
           <div className="flex flex-col gap-8">
@@ -54,8 +55,8 @@ export default function Experience() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-2 lg:col-span-2 lg:row-span-1"
         >
           <div className="flex flex-col gap-2">
@@ -70,8 +71,8 @@ export default function Experience() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-1 lg:col-span-1 lg:row-span-1"
         >
           <div className="mb-6 relative h-16 w-16 opacity-90 transition-opacity group-hover:opacity-100">
@@ -88,8 +89,8 @@ export default function Experience() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-1 lg:col-span-1 lg:row-span-1"
         >
           <div className="flex flex-col gap-2">
@@ -104,8 +105,8 @@ export default function Experience() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-2 lg:col-span-2 lg:row-span-1"
         >
           <div className="flex flex-col gap-2">
@@ -129,8 +130,8 @@ export default function Experience() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
           className="relative min-h-[180px] overflow-hidden rounded-3xl border border-white/5 bg-[#121215] transition-colors hover:bg-[#1a1a1e] sm:min-h-[220px] md:col-span-2 lg:col-span-2 lg:row-span-1" 
         >
           <Stacks />

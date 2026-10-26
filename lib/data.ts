@@ -35,7 +35,7 @@ export const projectsData = [
     title: "JakEdu",
     category: "Educational Platform API",
     year: "2025 - 2026",
-    description: "Architected and maintained scalable backend RESTful APIs using Golang and PostgreSQL for the JakEdu educational platform during my tenure at Pusdatin Dinas Pendidikan DKI Jakarta.",
+    description: "Architected and maintained scalable backend RESTful APIs using Golang and PostgreSQL for the JakEdu educational platform during my internship at Pusdatin Dinas Pendidikan DKI Jakarta.",
     role: "Backend Developer",
     tech: ["Golang", "PostgreSQL", "REST API", "Backend Integration"],
     imagePlaceholder: "/jakedu.png",
@@ -93,8 +93,7 @@ export const techChipsData = [
   { label: "Docker", slug: "docker", bg: "#2496ED", fg: "#ffffff" },
   { label: "Kubernetes", slug: "kubernetes", bg: "#326CE5", fg: "#ffffff" },
   { label: "Postman", slug: "postman", bg: "#FF6C37", fg: "#ffffff" },
-  { label: "Jira", slug: "jira", bg: "#0052CC", fg: "#ffffff" },
-  { label: "Trello", slug: "trello", bg: "#0052CC", fg: "#ffffff" },
+  { label: "GraphQL", slug: "graphql", bg: "#E10098", fg: "#ffffff" },
 ];
 
 

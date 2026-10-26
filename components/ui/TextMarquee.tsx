@@ -27,8 +27,9 @@ const TextMarquee = ({ text }: TextMarqueeProps) => {
   const scrollVelocity = useVelocity(scrollY);
   
   const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400
+    damping: 80,
+    stiffness: 300,
+    restDelta: 0.001
   });
   
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
@@ -36,13 +37,16 @@ const TextMarquee = ({ text }: TextMarqueeProps) => {
   });
 
   useAnimationFrame((t, delta) => {
-    let baseSpeed = -0.010; 
+    const baseSpeed = -0.010;
+    const maxDelta = 50; // Cap delta untuk prevent jank
+    const safeDelta = Math.min(delta, maxDelta);
     
-    let moveBy = baseSpeed + (velocityFactor.get() * -0.015);
+    const velocity = velocityFactor.get();
+    let moveBy = baseSpeed + (velocity * -0.015);
     
-    moveBy = moveBy * (delta / 16.66);
+    moveBy = moveBy * (safeDelta / 16.66);
     
-    let nextX = baseX.get() + moveBy;
+    const nextX = baseX.get() + moveBy;
     
     baseX.set(wrap(-50, 0, nextX));
   });
@@ -52,7 +56,7 @@ const TextMarquee = ({ text }: TextMarqueeProps) => {
   return (
     <div className="relative flex w-full overflow-hidden bg-black py-4 sm:py-8 md:py-16">
       <motion.div 
-        className="flex whitespace-nowrap w-fit" 
+        className="flex whitespace-nowrap w-fit will-change-transform" 
         style={{ x: useTransform(baseX, (v) => `${v}%`) }}
       >
         <div className="flex items-center">
