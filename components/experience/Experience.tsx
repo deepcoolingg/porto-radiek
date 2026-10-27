@@ -17,7 +17,7 @@ export default function Experience() {
           href={experienceData.header.resumeUrl} 
           target="_blank" 
           rel="noopener noreferrer" 
-          download="Radiek_Fidiyanto_CV.pdf"
+          download="CV_Muhammad-Radiek-Fidiyanto.pdf"
           className="rounded-full bg-white px-6 py-3 text-sm font-bold text-black transition-transform hover:scale-105"
         >
           View Resume

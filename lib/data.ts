@@ -102,7 +102,7 @@ export const techChipsData = [
 export const experienceData = {
   header: {
     title: "Education & Experience",
-    resumeUrl: "/Radiek_Fidiyanto_CV.pdf",
+    resumeUrl: "/cv_muhammad-radiek-fidiyanto.pdf",
   },
   pusdatin: {
     description: "Built and maintained the backend API for the JakEdu platform, working with the team to keep the system running smoothly.",
