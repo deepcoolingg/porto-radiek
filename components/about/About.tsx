@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { aboutData } from "@/lib/data";
 
@@ -61,7 +61,7 @@ export default function About() {
 }
 
 // Komponen per kata biar gampang diatur animasinya
-function Word({
+const Word = memo(({
   word,
   progress,
   range,
@@ -69,7 +69,7 @@ function Word({
   word: string;
   progress: MotionValue<number>;
   range: [number, number];
-}) {
+}) => {
   // Dari redup (0.15) jadi terang benderang (1)
   const opacity = useTransform(progress, range, [0.15, 1]);
   // Dari ngeblur jadi tajam
@@ -85,4 +85,4 @@ function Word({
       </motion.span>
     </span>
   );
-}
+});

@@ -37,7 +37,7 @@ export const projectsData = [
     url: "https://github.com/deepcoolingg/nibiru",
     category: "E-Commerce Backend Platform",
     year: "2026",
-    description: "Nibiru is an e-commerce platform for selling merchandise and digital literary works. I built both the user-facing storefront and the admin panel, using Laravel and PostgreSQL, with Xendit for payments and Biteship for shipping.",
+    description: "Nibiru is an e-commerce platform for selling merchandise and digital literary works. I built both the user  facing storefront and the admin panel, using Laravel and PostgreSQL, with Xendit for payments and Biteship for shipping.",
     role: "Backend Developer",
     tech: ["Laravel", "PostgreSQL", "Xendit API", "Biteship API"],
     imagePlaceholder: "/nibiru.png",
@@ -51,6 +51,26 @@ export const projectsData = [
     role: "Fullstack Developer",
     tech: ["Next.js", "CMS", "SEO", "Tailwind CSS"],
     imagePlaceholder: "/figtries.png",
+  },
+  {
+    title: "Avarice Tech",
+    url: "https://avaricetech.com",
+    category: "Landing Page",
+    year: "2026",
+    description: "Built a company profile website for a software development startup, using Next.js and TypeScript. Focused on a clean, maintainable code structure to keep the site fast and easy to update.",
+    role: "Frontend Developer",
+    tech: ["Next.js", "Tailwind CSS", "SEO"],
+    imagePlaceholder: "/avarice.png",
+  },
+  {
+    title: "Partistic",
+    url: "https://partistic.com",
+    category: "Landing Page",
+    year: "2026",
+    description: "Built a portfolio website to showcase exhibition installations and artwork, with a bold, gallery style UI. Used server-side rendering with Next.js to improve page load speed and navigation.",
+    role: "Frontend Developer",
+    tech: ["Next.js", "Tailwind CSS", "SEO"],
+    imagePlaceholder: "/partistic.png",
   }
 ];
  
@@ -105,7 +125,7 @@ export const experienceData = {
     resumeUrl: "/CV_Muhammad-Radiek-Fidiyanto.pdf",
   },
   pusdatin: {
-    description: "Worked on backend development for JakEdu, Pusdatin’s internal education data platform, using Golang and PostgreSQL. Handled API development, debugging, and query optimization, while collaborating with the team to keep the system reliable and easy to maintain",
+    description: "Worked on backend development for JakEdu, Pusdatin's internal education data platform, using Golang and PostgreSQL. Reduced API response time by around 15% and resolved 10-15 bugs through debugging and log analysis, while collaborating with the team to keep the system reliable and easy to maintain.",
     organization: "Pusat Data dan Informasi Dinas Pendidikan Provinsi DKI Jakarta",
     roleAndDate: "Web Developer Intern • Aug 2025 - Jan 2026",
     logoPath: "/pusdatin.png",

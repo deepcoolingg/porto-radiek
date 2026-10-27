@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image"; 
 import { projectsData } from "@/lib/data";
@@ -17,12 +18,12 @@ export default function SelectedWorks() {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px", amount: 0.3 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className={`flex flex-col gap-6 lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} sm:gap-8 lg:gap-20`}
             >
               
-              <div className="group relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-[#121215] lg:w-3/5">
+              <div className="group relative aspect-video w-full overflow-hidden rounded-3xl bg-[#121215] lg:w-3/5">
                 {project.url ? (
                 <a 
                   href={project.url} 

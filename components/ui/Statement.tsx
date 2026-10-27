@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 
 export default function Statement() {
@@ -42,7 +42,7 @@ export default function Statement() {
   );
 }
 
-function Character({ 
+const Character = memo(({ 
   children, 
   progress, 
   range 
@@ -50,7 +50,7 @@ function Character({
   children: string, 
   progress: MotionValue<number>, 
   range: [number, number] 
-}) {
+}) => {
   const opacity = useTransform(progress, range, [0.15, 1]);
   
   return (
@@ -58,4 +58,4 @@ function Character({
       {children}
     </motion.span>
   );
-}
+});

@@ -126,4 +126,22 @@
     will-change: transform;
     transform: translateZ(0);
   }
+  
+  /* CSS Containment untuk isolate repaints */
+  section {
+    contain: layout style;
+  }
+  
+  /* Optimize touch scrolling */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Optimize animations */
+  @media (prefers-reduced-motion: no-preference) {
+    * {
+      scroll-behavior: smooth;
+    }
+  }
 }

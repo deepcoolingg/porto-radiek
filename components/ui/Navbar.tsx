@@ -14,6 +14,7 @@ const navItems = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Home");
+  const [isInFooter, setIsInFooter] = useState(false);
 
   useEffect(() => {
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
@@ -24,6 +25,8 @@ export default function Navbar() {
           );
           if (activeItem) {
             setActiveTab(activeItem.name);
+            // Check if we're in footer/contact section
+            setIsInFooter(entry.target.id === "contact");
           }
         }
       });
@@ -31,7 +34,7 @@ export default function Navbar() {
 
     const observer = new IntersectionObserver(handleIntersect, {
       root: null,
-      rootMargin: "-30% 0px -50% 0px", 
+      rootMargin: "-30% 0px -70% 0px", 
       threshold: 0,
     });
 
@@ -76,7 +79,11 @@ export default function Navbar() {
     <motion.div
       layout
       transition={{ type: "spring", stiffness: 350, damping: 30 }}
-      className="fixed top-10 right-6 md:top-12 md:right-12 lg:right-24 z-[100] overflow-hidden rounded-3xl border border-white/10 bg-[#121215]/95 backdrop-blur-md text-white shadow-2xl"
+      className={`fixed top-10 right-6 md:top-12 md:right-12 lg:right-24 z-[100] overflow-hidden rounded-3xl border shadow-2xl ${
+        isInFooter 
+          ? "border-white/10 bg-black/80 backdrop-blur-md text-white" 
+          : "border-black/10 bg-white/95 backdrop-blur-md text-black"
+      }`}
     >
       <AnimatePresence mode="wait">
         {!isOpen ? (
@@ -86,7 +93,9 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(true)}
-            className="flex cursor-pointer items-center justify-between gap-6 px-5 py-3 transition-colors hover:bg-white/5 sm:gap-12 sm:px-8 sm:py-4"
+            className={`flex cursor-pointer items-center justify-between gap-6 px-5 py-3 transition-colors sm:gap-12 sm:px-8 sm:py-4 ${
+              isInFooter ? "hover:bg-white/10" : "hover:bg-black/5"
+            }`}
           >
             <span className="text-base font-bold tracking-wide md:text-lg">{activeTab}</span>
             
@@ -117,12 +126,16 @@ export default function Navbar() {
             className="flex min-w-[200px] flex-col p-6 sm:min-w-[240px] sm:p-8"
           >
             <div className="flex items-center justify-between pb-4 sm:pb-6">
-              <span className="text-base font-bold tracking-wide md:text-lg text-white">
+              <span className={`text-base font-bold tracking-wide md:text-lg ${
+                isInFooter ? "text-white" : "text-black"
+              }`}>
                 {activeTab}
               </span>
               <button
                 onClick={() => setIsOpen(false)}
-                className="cursor-pointer text-white transition-colors hover:text-white/70"
+                className={`cursor-pointer transition-colors ${
+                  isInFooter ? "text-white hover:text-white/70" : "text-black hover:text-black/70"
+                }`}
                 aria-label="Close menu"
               >
                 <motion.svg
@@ -152,12 +165,15 @@ export default function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    // Panggil fungsinya di sini
                     onClick={(e) => handleSmoothScroll(e, item.href.replace('#', ''), item.name)}
                     className={`text-lg font-bold tracking-wide w-fit transition-all ${
-                      isActive
-                        ? "text-white underline underline-offset-8 decoration-2"
-                        : "text-white/60 hover:text-white"
+                      isInFooter
+                        ? isActive
+                          ? "text-white underline underline-offset-8 decoration-2"
+                          : "text-white/60 hover:text-white"
+                        : isActive
+                        ? "text-black underline underline-offset-8 decoration-2"
+                        : "text-black/60 hover:text-black"
                     }`}
                   >
                     {item.name}
