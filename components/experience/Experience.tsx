@@ -31,24 +31,32 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-2 lg:col-span-2 lg:row-span-2"
+          className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-2 lg:col-span-2 lg:row-span-2"
         >
-          <div className="flex flex-col gap-8">
-            <div className="relative h-16 w-40 opacity-80 transition-opacity group-hover:opacity-100">
-                <Image src={experienceData.pusdatin.logoPath} alt="Pusdatin Logo" fill className="object-contain object-left" sizes="160px" quality={90} /> 
+          <div className="flex flex-col">
+            <div className="relative mb-6 h-16 w-full object-center opacity-80 transition-opacity group-hover:opacity-100">
+              <Image 
+                src={experienceData.pusdatin.logoPath} 
+                alt="Pusdatin Logo" 
+                fill 
+                className="object-contain object-left" 
+                sizes="480px" 
+                quality={90} 
+              /> 
             </div>
-            <p className="text-lg font-medium leading-relaxed text-white/90 sm:text-xl md:text-2xl lg:text-3xl">
+            
+            <p className="text-lg font-medium leading-relaxed text-white/90 sm:text-lg md:text-xl lg:text-2xl">
               {experienceData.pusdatin.description}
             </p>
-          </div>
-          <div className="mt-8 flex items-center justify-between sm:mt-12">
-            <div className="flex flex-col">
+
+            <div className="mt-6 flex flex-col">
               <span className="text-sm font-bold text-white">{experienceData.pusdatin.organization}</span>
               <span className="text-sm text-white/50">{experienceData.pusdatin.roleAndDate}</span>
             </div>
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:bg-white/10">
-              <span className="text-white/70">↗</span>
-            </div>
+          </div>
+
+          <div className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:bg-white/10 sm:bottom-8 sm:right-8">
+            <span className="text-white/70">↗</span>
           </div>
         </motion.div>
 
@@ -76,7 +84,7 @@ export default function Experience() {
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-1 lg:col-span-1 lg:row-span-1"
         >
           <div className="mb-6 relative h-16 w-16 opacity-90 transition-opacity group-hover:opacity-100">
-            <Image src={experienceData.education.logoPath} alt="UPN Logo" fill className="object-contain" sizes="64px" quality={90} /> 
+            <Image src={experienceData.education.logoPath} alt="UPN Logo" fill className="object-contain object-center" sizes="64px" quality={90} /> 
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-lg font-bold tracking-tight text-white leading-tight sm:text-xl">{experienceData.education.major}</span>
@@ -122,7 +130,7 @@ export default function Experience() {
               ))}
             </div>
           </div>
-          <div className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
+          <div className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 sm:bottom-8 sm:right-8">
             <span className="text-white/70">↗</span>
           </div>
         </motion.div>

@@ -102,10 +102,10 @@ export const techChipsData = [
 export const experienceData = {
   header: {
     title: "Education & Experience",
-    resumeUrl: "/cv_muhammad-radiek-fidiyanto.pdf",
+    resumeUrl: "/CV_Muhammad-Radiek-Fidiyanto.pdf",
   },
   pusdatin: {
-    description: "Built and maintained the backend API for the JakEdu platform, working with the team to keep the system running smoothly.",
+    description: "Worked on backend development for JakEdu, Pusdatin’s internal education data platform, using Golang and PostgreSQL. Handled API development, debugging, and query optimization, while collaborating with the team to keep the system reliable and easy to maintain",
     organization: "Pusat Data dan Informasi Dinas Pendidikan Provinsi DKI Jakarta",
     roleAndDate: "Web Developer Intern • Oct 2025 - Jan 2026",
     logoPath: "/pusdatin.png",
