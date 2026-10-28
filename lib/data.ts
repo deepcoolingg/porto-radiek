@@ -85,7 +85,7 @@ export const faqsData = [
   },
   {
     question: "Do you only work on backend?",
-    answer: "No, I work across the stack. Backend is my strongest area (Go, PHP, JavaScript), but I also build frontends with React, Next.js, and Tailwind CSS so I can handle a project end to end."
+    answer: "No, I work across the stack. Backend is my strongest area (Go, PHP, Typescript), but I also build frontends with Next.js, and Vue.js so I can handle a project end to end."
   },
   {
     question: "Does code quality matter that early?",
