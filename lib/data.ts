@@ -30,7 +30,7 @@ export const projectsData = [
     description: "JakEdu is the internal platform Pusdatin Dinas Pendidikan DKI Jakarta uses to manage access across several education systems (Selaras, KKI, and Dapodik). Access used to be handled manually through direct database queries. I built a centralized Master Data module (Users, Applications, Roles) backed by a PostgreSQL schema using Role Based Access Control, so admins can grant or revoke access in a few clicks and see clearly who has access to what.",
     role: "Backend Developer",
     tech: ["Golang", "PostgreSQL", "REST API", "Backend Integration"],
-    imagePlaceholder: "/jakedu.png",
+    imagePlaceholder: "/jakedu.webp",
   },
   {
     title: "Nibiru",
@@ -40,7 +40,7 @@ export const projectsData = [
     description: "Nibiru is an e-commerce platform for selling merchandise and digital literary works. I built both the user  facing storefront and the admin panel, using Laravel and PostgreSQL, with Xendit for payments and Biteship for shipping.",
     role: "Backend Developer",
     tech: ["Laravel", "PostgreSQL", "Xendit API", "Biteship API"],
-    imagePlaceholder: "/nibiru.png",
+    imagePlaceholder: "/nibiru.webp",
   },
   {
     title: "Figtries",
@@ -50,7 +50,7 @@ export const projectsData = [
     description: "Figtries is a company profile landing page and CMS. I built both, with a CMS that lets the client upload and update their own content without needing a developer.",
     role: "Fullstack Developer",
     tech: ["Next.js", "CMS", "SEO", "Tailwind CSS"],
-    imagePlaceholder: "/figtries.png",
+    imagePlaceholder: "/figtries.webp",
   },
   {
     title: "Avarice Tech",
@@ -60,7 +60,7 @@ export const projectsData = [
     description: "Built a company profile website for a software development startup, using Next.js and TypeScript. Focused on a clean, maintainable code structure to keep the site fast and easy to update.",
     role: "Frontend Developer",
     tech: ["Next.js", "Tailwind CSS", "SEO"],
-    imagePlaceholder: "/avarice.png",
+    imagePlaceholder: "/avarice.webp",
   },
   {
     title: "Partistic",
@@ -70,7 +70,7 @@ export const projectsData = [
     description: "Built a portfolio website to showcase exhibition installations and artwork, with a bold, gallery style UI. Used server-side rendering with Next.js to improve page load speed and navigation.",
     role: "Frontend Developer",
     tech: ["Next.js", "Tailwind CSS", "SEO"],
-    imagePlaceholder: "/partistic.png",
+    imagePlaceholder: "/partistic.webp",
   }
 ];
  
