@@ -10,7 +10,7 @@ function Experience() {
   return (
     <section className="relative z-10 w-full bg-black px-6 py-16 sm:py-20 md:px-12 md:py-24 lg:px-24">
       
-      <div className="mb-8 flex flex-col items-start justify-between gap-4 sm:mb-12 sm:gap-6 md:flex-row md:items-end">
+      <div className="mb-8 flex flex-col items-start justify-between gap-2 sm:mb-12 sm:gap-4 md:flex-row md:items-end">
         <h2 className="font-sans text-2xl font-medium tracking-tight text-white sm:text-3xl md:text-5xl lg:text-6xl">
           {experienceData.header.title}
         </h2>

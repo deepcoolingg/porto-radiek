@@ -38,7 +38,6 @@ function Footer() {
         </div>
 
         <div className="mt-auto flex w-full flex-col">
-          <div className="mb-6 h-[1px] w-full bg-black/10 sm:mb-10"></div>
 
           <div className="flex flex-col justify-between gap-8 sm:gap-12 lg:flex-row lg:gap-0">
             <div className="flex flex-col gap-2">

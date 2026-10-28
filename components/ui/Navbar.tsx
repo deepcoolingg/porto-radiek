@@ -25,7 +25,6 @@ function Navbar() {
           );
           if (activeItem) {
             setActiveTab(activeItem.name);
-            // Check if we're in footer/contact section
             setIsInFooter(entry.target.id === "contact");
           }
         }
@@ -38,7 +37,6 @@ function Navbar() {
       threshold: 0,
     });
 
-    // Delay observer initialization untuk performa awal lebih baik
     const timeoutId = setTimeout(() => {
       navItems.forEach((item) => {
         const id = item.href.replace("#", "");
@@ -79,7 +77,7 @@ function Navbar() {
     <motion.div
       layout
       transition={{ type: "spring", stiffness: 350, damping: 30 }}
-      className={`fixed top-10 right-6 md:top-12 md:right-12 lg:right-24 z-[100] overflow-hidden rounded-3xl border shadow-2xl ${
+      className={`fixed top-10 right-6 md:top-12 md:right-12 lg:right-24 z-[100] overflow-hidden rounded-xl border shadow-xl ${
         isInFooter 
           ? "border-white/10 bg-black/80 backdrop-blur-md text-white" 
           : "border-black/10 bg-white/95 backdrop-blur-md text-black"

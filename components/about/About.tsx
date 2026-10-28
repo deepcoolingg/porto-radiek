@@ -39,7 +39,7 @@ function About() {
           </div>
 
           <div className="md:w-3/4">
-            <p className="flex flex-wrap font-sans text-xl font-medium leading-relaxed tracking-tight sm:text-2xl md:text-4xl lg:text-5xl">
+            <p className="flex flex-wrap font-sans text-medium font-medium leading-relaxed tracking-tight sm:text-xl md:text-2xl lg:text-4xl">
               {words.map((word, i) => {
                 const start = i / words.length;
                 const end = start + (1 / words.length);
