@@ -1,13 +1,38 @@
+import dynamic from "next/dynamic";
 import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/hero/Hero";
-import MobileProfileCard from "@/components/hero/MobileProfileCard";
-import About from "@/components/about/About";
-import TextMarquee from "@/components/ui/TextMarquee";
-import Works from "@/components/works/Works";
-import Footer from "@/components/ui/Footer";
-import Experience from "@/components/experience/Experience";
-import UltimatumFAQ from "@/components/ultimatum/UltimatumFaq";
-import Statement from "@/components/ui/Statement";
+
+const MobileProfileCard = dynamic(() => import("@/components/hero/MobileProfileCard"), {
+  ssr: true,
+});
+
+const About = dynamic(() => import("@/components/about/About"), {
+  ssr: true,
+});
+
+const TextMarquee = dynamic(() => import("@/components/ui/TextMarquee"), {
+  ssr: true,
+});
+
+const Works = dynamic(() => import("@/components/works/Works"), {
+  ssr: true,
+});
+
+const Statement = dynamic(() => import("@/components/ui/Statement"), {
+  ssr: true,
+});
+
+const Experience = dynamic(() => import("@/components/experience/Experience"), {
+  ssr: true,
+});
+
+const UltimatumFAQ = dynamic(() => import("@/components/ultimatum/UltimatumFaq"), {
+  ssr: true,
+});
+
+const Footer = dynamic(() => import("@/components/ui/Footer"), {
+  ssr: true,
+});
 
 export default function Home() {
   return (

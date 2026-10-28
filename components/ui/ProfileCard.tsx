@@ -103,7 +103,7 @@
       let targetY = 0;
 
       const DEFAULT_TAU = 0.14;
-      const INITIAL_TAU = 0.6;
+      const INITIAL_TAU = 0.5; // Reduce dari 0.6 untuk responsivitas lebih baik
       let initialUntil = 0;
 
       const setVarsFromXY = (x: number, y: number): void => {
@@ -132,6 +132,7 @@
           '--rotate-y': `${round(centerY / 4)}deg`
         };
 
+        // Batch style updates untuk performa lebih baik
         for (const [k, v] of Object.entries(properties)) wrap.style.setProperty(k, v);
       };
 

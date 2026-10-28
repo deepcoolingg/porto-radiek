@@ -27,8 +27,8 @@ const TextMarquee = ({ text }: TextMarqueeProps) => {
   const scrollVelocity = useVelocity(scrollY);
   
   const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 80,
-    stiffness: 300,
+    damping: 50, // Increase damping untuk performa lebih baik
+    stiffness: 400,
     restDelta: 0.001
   });
   
@@ -37,8 +37,8 @@ const TextMarquee = ({ text }: TextMarqueeProps) => {
   });
 
   useAnimationFrame((t, delta) => {
-    const baseSpeed = -0.010;
-    const maxDelta = 50; // Cap delta untuk prevent jank
+    const baseSpeed = -0.015; // Slightly faster base speed
+    const maxDelta = 50;
     const safeDelta = Math.min(delta, maxDelta);
     
     const velocity = velocityFactor.get();
@@ -51,7 +51,7 @@ const TextMarquee = ({ text }: TextMarqueeProps) => {
     baseX.set(wrap(-50, 0, nextX));
   });
 
-  const repeatedText = Array(4).fill(text);
+  const repeatedText = Array(3).fill(text); // Reduce dari 4 ke 3 untuk performa
 
   return (
     <div className="relative flex w-full overflow-hidden bg-black py-4 sm:py-8 md:py-16">

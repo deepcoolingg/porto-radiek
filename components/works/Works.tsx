@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image"; 
 import { projectsData } from "@/lib/data";
 
-export default function SelectedWorks() {
+function SelectedWorks() {
   return (
     <section className="relative z-20 w-full bg-black px-6 py-16 sm:py-24 md:px-12 md:py-32 lg:px-24">
 
@@ -18,7 +18,7 @@ export default function SelectedWorks() {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px", amount: 0.3 }}
+              viewport={{ once: true, margin: "-50px", amount: 0.2 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className={`flex flex-col gap-6 lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} sm:gap-8 lg:gap-20`}
             >
@@ -38,7 +38,10 @@ export default function SelectedWorks() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 50vw"
                     priority={index === 0}
-                    quality={85}
+                    quality={75}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
                   />
                 </a>
               ) : (
@@ -49,7 +52,10 @@ export default function SelectedWorks() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 50vw"
                   priority={index === 0}
-                  quality={85}
+                  quality={75}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
                 />
               )}
 
@@ -95,3 +101,5 @@ export default function SelectedWorks() {
     </section>
   );
 }
+
+export default memo(SelectedWorks);

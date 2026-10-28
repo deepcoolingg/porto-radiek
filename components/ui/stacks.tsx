@@ -57,7 +57,9 @@ export default function Stacks(): ReactNode {
 
       const engine = Engine.create();
       engine.gravity.y = 0.8; 
-      engine.enableSleeping = true; // Enable sleeping untuk bodies yang tidak bergerak
+      engine.enableSleeping = true;
+      engine.positionIterations = 6; // Kurangi iterations untuk performa lebih baik
+      engine.velocityIterations = 4;
       const world = engine.world;
 
       const wallThickness = 2000;
@@ -106,7 +108,7 @@ export default function Stacks(): ReactNode {
       Events.on(mouseConstraint, "enddrag", () => { container.style.cursor = "grab"; });
 
       const runner = Runner.create();
-      runner.delta = 1000 / 60; // Fix timestep ke 60fps
+      runner.delta = 1000 / 60;
       Runner.run(runner, engine);
 
       let raf = 0;

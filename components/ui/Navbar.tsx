@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";  
+import { useState, useEffect, memo, useMemo, useCallback } from "react";  
 import { motion, AnimatePresence, animate } from "framer-motion";
 
 const navItems = [
@@ -11,7 +11,7 @@ const navItems = [
   { name: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Home");
   const [isInFooter, setIsInFooter] = useState(false);
@@ -57,7 +57,7 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string, name: string) => {
+  const handleSmoothScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string, name: string) => {
     e.preventDefault();
     setActiveTab(name);
     setIsOpen(false); 
@@ -73,7 +73,7 @@ export default function Navbar() {
         });
       }
     }, 150);
-  };
+  }, []);
 
   return (
     <motion.div
@@ -187,3 +187,5 @@ export default function Navbar() {
     </motion.div>
   );
 }
+
+export default memo(Navbar);

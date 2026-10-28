@@ -18,7 +18,7 @@ export const heroData = {
  
 export const aboutData = {
   heading: "ABOUT ME",
-  description: "I'm a software developer based in Jakarta. I like turning complex problems into simple, usable products whether that's a backend API that handles load well, or a frontend that just feels right to use. I try to write clean code that's easy for others to work with.",
+  description: "I’m a software developer based in Jakarta. Through an internship and freelance projects for real clients, I’ve worked on turning complex problems into simple, usable products whether that’s a backend API that handles load well, or a frontend that just feels right to use. I try to write clean code that’s easy for others to work with.",
 };
  
 export const projectsData = [
@@ -102,7 +102,6 @@ export const techChipsData = [
   fg: "#ffffff",
   iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
   },
-  { label: "Kotlin", slug: "kotlin", bg: "#0095D5", fg: "#ffffff" },
   { label: "TypeScript", slug: "typescript", bg: "#3178C6", fg: "#ffffff" },
   { label: "Tailwind", slug: "tailwindcss", bg: "#0F172A", fg: "#38B2AC" },
   { label: "Golang", slug: "go", bg: "#00ADD8", fg: "#ffffff" },
@@ -140,13 +139,13 @@ export const experienceData = {
       value: "3.78",
       label: "Cumulative GPA (Cumlaude)",
     },
-    leadership: {
-      value: "2 Years",
-      label: "Active Student Leadership",
-    }
+    certifications: {
+      value: "3",
+      label: "Certifications - BNSP, IBM, Wadhwani Foundation",
+    },
   },
   organization: {
-    description: "Took part in organizing member development programs for the student body, from onboarding new members to putting together training materials. Also helped plan activities meant to build members soft skills and keep them engaged throughout the year.",
+    description: "Progressed from Staff to Head of the HRD Department at Himpunan D3 Sistem Informasi UPNVJ, where I led training curriculum design and mentoring programs for department members. I also initiated ‘Monthly Discuss,’ an internal program to improve communication and team dynamics across the organization.",
     roles: [
       {
         title: "Staff of HRD Department",

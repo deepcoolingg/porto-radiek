@@ -1,92 +1,103 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
-import FloatingLines from "@/components/ui/FloatingLines";
-import ProfileCard from "@/components/ui/ProfileCard";
+import dynamic from "next/dynamic";
+import ColorBends from "@/components/ui/ColorBends";
 import { heroData } from "@/lib/data";
 
-export default function Hero() {
+const ProfileCard = dynamic(() => import("@/components/ui/ProfileCard"), {
+  ssr: false,
+  loading: () => <div className="w-[300px] h-[400px] bg-white/5 rounded-xl animate-pulse" />
+});
+
+function Hero() {
   return (
-    <section className="relative flex h-screen w-full flex-col justify-center bg-black px-6 md:px-12 lg:px-24 overflow-hidden will-change-transform">
+    <section className="relative h-screen w-full overflow-hidden will-change-transform">
       
-      <div className="absolute inset-0 z-0 opacity-70">
-        <FloatingLines />
-      </div>
-
-      <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-[5] pointer-events-none" />
-
-      <motion.div 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="fixed top-10 left-6 md:top-12 md:left-12 lg:left-24 z-50 inline-flex w-fit cursor-pointer items-center rounded-2xl border border-white/10 bg-[#121215]/90 px-4 py-2.5 transition-colors duration-300 hover:border-white/30 hover:bg-white/10 sm:px-6 sm:py-3"
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-sm font-bold tracking-wide text-white md:text-base">
-            {heroData.badge.title}
-          </span>
-          <span className="text-xs text-white/70">
-            {heroData.badge.subtitle}
-          </span>
-        </div>
-      </motion.div>
-
-      <div className="z-10 flex w-full items-center justify-between gap-4 pointer-events-none mt-20 md:mt-0">
+      <div className="absolute inset-0 z-0">
+        <ColorBends />
         
-        <div className="flex w-full max-w-4xl flex-col pointer-events-auto relative">
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-20 flex h-full w-full flex-col justify-center px-6 md:px-12 lg:px-24">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="fixed top-10 left-6 md:top-12 md:left-12 lg:left-24 z-50 inline-flex w-fit cursor-pointer items-center rounded-2xl border border-white/10 bg-[#121215]/90 px-4 py-2.5 transition-colors duration-300 hover:border-white/30 hover:bg-white/10 sm:px-6 sm:py-3"
+        >
+          <div className="flex flex-col items-center">
+            <span className="text-sm font-bold tracking-wide text-white md:text-base">
+              {heroData.badge.title}
+            </span>
+            <span className="text-xs text-white/70">
+              {heroData.badge.subtitle}
+            </span>
+          </div>
+        </motion.div>
+
+        <div className="z-10 flex w-full items-center justify-between gap-4 pointer-events-none mt-20 md:mt-0">
           
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col"
-          >
-            <h1 className="text-[2.5rem] font-medium leading-[1.05] tracking-tight text-[#f8fafc] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[6rem]">
-              {heroData.heading.line1} <br />
-              {heroData.heading.line2} <br />
-              <span className="font-serif italic text-white">{heroData.heading.highlight}</span>
-            </h1>
-          </motion.div>
+          <div className="flex w-full max-w-4xl flex-col pointer-events-auto relative">
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col"
+            >
+              <h1 className="text-[2.5rem] font-medium leading-[1.05] tracking-tight text-[#f8fafc] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[6rem]">
+                {heroData.heading.line1} <br />
+                {heroData.heading.line2} <br />
+                <span className="font-serif italic text-white">{heroData.heading.highlight}</span>
+              </h1>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8 max-w-[36rem]"
+            >
+              <p className="text-sm leading-relaxed text-[#a1a1aa] sm:text-base md:text-[1.1rem]">
+                {heroData.description}
+              </p>
+            </motion.div>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 max-w-[36rem]"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden shrink-0 ml-auto pointer-events-auto lg:block"
           >
-            <p className="text-sm leading-relaxed text-[#a1a1aa] sm:text-base md:text-[1.1rem]">
-              {heroData.description}
-            </p>
+            <ProfileCard
+              name={heroData.profile.name} 
+              title={heroData.profile.title}
+              image={heroData.profile.image} 
+              showUserInfo={true}
+              enableTilt={true}
+              enableMobileTilt={false}
+              behindGlowColor="rgba(168, 85, 247, 0.4)" 
+              behindGlowEnabled={true}
+              innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
+            />
           </motion.div>
+
         </div>
 
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="hidden shrink-0 ml-auto pointer-events-auto lg:block"
-        >
-          <ProfileCard
-            name={heroData.profile.name} 
-            title={heroData.profile.title}
-            image={heroData.profile.image} 
-            showUserInfo={true}
-            enableTilt={true}
-            enableMobileTilt={false}
-            behindGlowColor="rgba(168, 85, 247, 0.4)" 
-            behindGlowEnabled={true}
-            innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
-          />
-        </motion.div>
-
-      </div>
-
-      <motion.div
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 1 }}
-         transition={{ delay: 1, duration: 1 }}
-         className="absolute bottom-10 left-6 z-10 md:bottom-12 md:left-12 lg:left-24 pointer-events-none"
-      />
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ delay: 1, duration: 1 }}
+           className="absolute bottom-10 left-6 z-10 md:bottom-12 md:left-12 lg:left-24 pointer-events-none"
+        />
+       </div>
     </section>
   );
 }
+
+export default memo(Hero);

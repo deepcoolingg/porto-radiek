@@ -1,9 +1,10 @@
 "use client";
 
+import { memo, useCallback } from "react";
 import { animate } from "framer-motion";
 
-export default function Footer() {
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+function Footer() {
+  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -15,7 +16,7 @@ export default function Footer() {
         onUpdate: (latest) => window.scrollTo(0, latest),
       });
     }
-  };
+  }, []);
 
   return (
     <>
@@ -103,3 +104,5 @@ export default function Footer() {
     </>
   );
 }
+
+export default memo(Footer);

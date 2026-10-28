@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import ClientWrapper from "@/components/providers/ClientWrapper";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter", 
+  variable: "--font-inter",
+  display: 'swap',
+  preload: true,
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--font-playfair",
+  display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -18,13 +23,13 @@ export const metadata: Metadata = {
     default: "Muhammad Radiek | Software Developer",
     template: "%s | Muhammad Radiek", 
   },
-  description: "Portfolio of Muhammad Radiek Fidiyanto, a Software Developer based in Jakarta specializing in high performance web applications, backend architecture, and full stack systems.",
+  description: "Portfolio of Muhammad Radiek Fidiyanto, a software developer based in Jakarta focused on backend architecture, web development, and system integration.",
   keywords: [
     "Muhammad Radiek",
     "Radiek Fidiyanto",
     "Muhammad Radiek Fidiyanto",
     "Software Developer Jakarta",
-    "Backend Engineer Indonesia",
+    "Backend Developer Indonesia",
     "Full Stack Developer",
     "Next.js Developer",
     "Golang Backend",
@@ -32,16 +37,10 @@ export const metadata: Metadata = {
     "Web Development",
     "System Integration",
     "API Development",
-    "Digital Ecosystems",
-    "High Performance Web Apps",
     "Scalable Backend Architecture",
-    "Clean Frontend Execution",
     "Software Engineering",
     "Web Application Development",
-    "Backend Architecture",
     "Full Stack Systems",
-    "System Integration",
-    "API Development",
   ],
   authors: [{ name: "Muhammad Radiek Fidiyanto" }],
   creator: "Muhammad Radiek Fidiyanto",
@@ -50,7 +49,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: "https://radiek.online", 
     title: "Muhammad Radiek | Software Developer",
-    description: "Crafting scalable software and high performance digital ecosystems.",
+    description: "I build software that works reliably, even under pressure.",
     siteName: "Radiek Portfolio",
     images: [
       {
@@ -64,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Muhammad Radiek | Software Developer",
-    description: "Crafting scalable software and high performance digital ecosystems.",
+    description: "I build software that works reliably, even under pressure.",
     images: ["/profile.jpeg"],
   },
 };
@@ -79,7 +78,9 @@ export default function RootLayout({
       <body 
         className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-black text-white`}
       >
-        {children}
+        <ClientWrapper>
+          {children}
+        </ClientWrapper>
       </body>
     </html>
   );

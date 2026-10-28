@@ -1,11 +1,12 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { experienceData } from "@/lib/data";
 import Stacks from "@/components/ui/stacks";
-import { experienceData } from "@/lib/data"; 
 
-export default function Experience() {
+function Experience() {
   return (
     <section className="relative z-10 w-full bg-black px-6 py-16 sm:py-20 md:px-12 md:py-24 lg:px-24">
       
@@ -29,7 +30,7 @@ export default function Experience() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-2 lg:col-span-2 lg:row-span-2"
         >
@@ -41,7 +42,8 @@ export default function Experience() {
                 fill 
                 className="object-contain object-left" 
                 sizes="480px" 
-                quality={90} 
+                quality={75}
+                loading="lazy"
               /> 
             </div>
             
@@ -54,16 +56,12 @@ export default function Experience() {
               <span className="text-sm text-white/50">{experienceData.pusdatin.roleAndDate}</span>
             </div>
           </div>
-
-          <div className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:bg-white/10 sm:bottom-8 sm:right-8">
-            <span className="text-white/70">↗</span>
-          </div>
         </motion.div>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-2 lg:col-span-2 lg:row-span-1"
         >
@@ -71,20 +69,17 @@ export default function Experience() {
             <span className="text-5xl font-bold tracking-tighter text-white sm:text-6xl lg:text-7xl">{experienceData.stats.gpa.value}</span>
             <span className="text-base text-white/50">{experienceData.stats.gpa.label}</span>
           </div>
-          <div className="absolute bottom-6 right-6 flex h-8 w-8 items-center justify-center rounded-full bg-white/5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
-            <span className="text-xs text-white/70">↗</span>
-          </div>
         </motion.div>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-1 lg:col-span-1 lg:row-span-1"
         >
           <div className="mb-6 relative h-16 w-16 opacity-90 transition-opacity group-hover:opacity-100">
-            <Image src={experienceData.education.logoPath} alt="UPN Logo" fill className="object-contain object-center" sizes="64px" quality={90} /> 
+            <Image src={experienceData.education.logoPath} alt="UPN Logo" fill className="object-contain object-center" sizes="64px" quality={75} loading="lazy" /> 
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-lg font-bold tracking-tight text-white leading-tight sm:text-xl">{experienceData.education.major}</span>
@@ -97,23 +92,20 @@ export default function Experience() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-1 lg:col-span-1 lg:row-span-1"
         >
           <div className="flex flex-col gap-2">
-            <span className="text-3xl font-bold tracking-tighter text-white sm:text-4xl lg:text-5xl">{experienceData.stats.leadership.value}</span>
-            <span className="text-sm text-white/50">{experienceData.stats.leadership.label}</span>
-          </div>
-          <div className="absolute bottom-6 right-6 flex h-8 w-8 items-center justify-center rounded-full bg-white/5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
-            <span className="text-xs text-white/70">↗</span>
+            <span className="text-3xl font-bold tracking-tighter text-white sm:text-4xl lg:text-5xl">{experienceData.stats.certifications.value}</span>
+            <span className="text-sm text-white/50">{experienceData.stats.certifications.label}</span>
           </div>
         </motion.div>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
           className="group relative flex flex-col justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121215] p-6 transition-colors hover:bg-[#1a1a1e] sm:p-8 md:col-span-2 lg:col-span-2 lg:row-span-1"
         >
@@ -130,15 +122,12 @@ export default function Experience() {
               ))}
             </div>
           </div>
-          <div className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 sm:bottom-8 sm:right-8">
-            <span className="text-white/70">↗</span>
-          </div>
         </motion.div>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
           className="relative min-h-[180px] overflow-hidden rounded-3xl border border-white/5 bg-[#121215] transition-colors hover:bg-[#1a1a1e] sm:min-h-[220px] md:col-span-2 lg:col-span-2 lg:row-span-1" 
         >
@@ -149,3 +138,5 @@ export default function Experience() {
     </section>
   );
 }
+
+export default memo(Experience);
