@@ -11,7 +11,7 @@ function Experience() {
     <section className="relative z-10 w-full bg-black px-6 py-16 sm:py-20 md:px-12 md:py-24 lg:px-24">
       
       <div className="mb-8 flex flex-col items-start justify-between gap-2 sm:mb-12 sm:gap-4 md:flex-row md:items-end">
-        <h2 className="font-sans text-2xl font-medium tracking-tight text-white sm:text-3xl md:text-5xl lg:text-6xl">
+        <h2 className="font-sans text-xl font-medium tracking-tight text-white sm:text-2xl md:text-3xl lg:text-4xl">
           {experienceData.header.title}
         </h2>
         <a 
@@ -19,7 +19,7 @@ function Experience() {
           target="_blank" 
           rel="noopener noreferrer" 
           download="CV_Muhammad-Radiek-Fidiyanto.pdf"
-          className="rounded-3xl bg-white px-8 py-4 text-base font-bold text-black transition-transform hover:scale-105 md:px-10 md:py-5 md:text-lg"
+          className="rounded-2xl bg-white px-5 py-2.5 text-sm font-bold text-black transition-transform hover:scale-105 md:px-6 md:py-3 md:text-base"
         >
           View Resume
         </a>

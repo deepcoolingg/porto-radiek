@@ -464,8 +464,8 @@
           <section
             className="grid relative overflow-hidden"
             style={{
-              height: '80svh',
-              maxHeight: '540px',
+              height: '70svh',
+              maxHeight: '480px',
               aspectRatio: '0.718',
               borderRadius: cardRadius,
               backgroundBlendMode: 'color-dodge, normal, normal, normal',
@@ -594,11 +594,11 @@
                   pointerEvents: 'none'
                 }}
               >
-                <div className="w-full absolute flex flex-col pt-12 pb-16 px-4 bg-gradient-to-b from-black/80 via-black/40 to-transparent" style={{ top: '0', display: 'flex', gridArea: 'auto' }}>
+                <div className="w-full absolute flex flex-col pt-8 pb-12 px-4 bg-gradient-to-b from-black/80 via-black/40 to-transparent" style={{ top: '0', display: 'flex', gridArea: 'auto' }}>
                   <h3
                     className="font-semibold m-0 text-white drop-shadow-md"
                     style={{
-                      fontSize: 'min(4svh, 2.5em)',
+                      fontSize: 'clamp(1.2rem, 3svh, 1.6rem)',
                       display: 'block',
                       gridArea: 'auto',
                       pointerEvents: 'auto'
@@ -609,7 +609,7 @@
                   <p
                     className="font-medium text-white/90 drop-shadow-sm mt-1"
                     style={{
-                      fontSize: '16px',
+                      fontSize: 'clamp(12px, 1.5svh, 14px)',
                       display: 'block',
                       gridArea: 'auto',
                       pointerEvents: 'auto'

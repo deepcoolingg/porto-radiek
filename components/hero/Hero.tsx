@@ -21,19 +21,18 @@ function Hero() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
       </div>
       
-      {/* Content */}
       <div className="relative z-20 flex h-full w-full flex-col justify-center px-6 md:px-12 lg:px-24">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="fixed top-10 left-6 md:top-12 md:left-12 lg:left-24 z-50 inline-flex w-fit cursor-pointer items-center rounded-2xl border border-white/10 bg-[#121215]/90 px-4 py-2.5 transition-colors duration-300 hover:border-white/30 hover:bg-white/10 sm:px-6 sm:py-3"
+          className="fixed top-10 left-6 md:top-12 md:left-12 lg:left-24 z-50 inline-flex w-fit cursor-pointer items-center rounded-xl border border-white/10 bg-[#121215]/90 px-3 py-2 transition-colors duration-300 hover:border-white/30 hover:bg-white/10 sm:px-4 sm:py-2"
         >
           <div className="flex flex-col items-center">
-            <span className="text-sm font-bold tracking-wide text-white md:text-base">
+            <span className="text-xs font-bold tracking-wide text-white md:text-sm">
               {heroData.badge.title}
             </span>
-            <span className="text-xs text-white/70">
+            <span className="text-[10px] text-white/70 md:text-xs">
               {heroData.badge.subtitle}
             </span>
           </div>
@@ -49,7 +48,7 @@ function Hero() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col"
             >
-              <h1 className="text-[2.5rem] font-medium leading-[1.05] tracking-tight text-[#f8fafc] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[6rem]">
+              <h1 className="text-[2rem] font-medium leading-[1.1] tracking-tight text-[#f8fafc] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.5rem]">
                 {heroData.heading.line1} <br />
                 {heroData.heading.line2} <br />
                 <span className="font-serif italic text-white">{heroData.heading.highlight}</span>
@@ -60,9 +59,9 @@ function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-8 max-w-[36rem]"
+              className="mt-6 max-w-[32rem]"
             >
-              <p className="text-sm leading-relaxed text-[#a1a1aa] sm:text-base md:text-[1.1rem]">
+              <p className="text-xs leading-relaxed text-[#a1a1aa] sm:text-sm md:text-base lg:text-[1rem]">
                 {heroData.description}
               </p>
             </motion.div>

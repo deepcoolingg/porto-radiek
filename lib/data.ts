@@ -104,7 +104,7 @@ export const techChipsData = [
   },
   { label: "TypeScript", slug: "typescript", bg: "#3178C6", fg: "#ffffff" },
   { label: "Tailwind", slug: "tailwindcss", bg: "#0F172A", fg: "#38B2AC" },
-  { label: "Golang", slug: "go", bg: "#00ADD8", fg: "#ffffff" },
+  { label: "Go", slug: "go", bg: "#00ADD8", fg: "#ffffff" },
   { label: "PHP", slug: "php", bg: "#777BB4", fg: "#ffffff" },
   { label: "Python", slug: "python", bg: "#3776AB", fg: "#ffffff" },
   { label: "MySQL", slug: "mysql", bg: "#4479A1", fg: "#ffffff" },

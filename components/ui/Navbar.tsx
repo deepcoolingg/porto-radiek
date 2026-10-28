@@ -77,7 +77,7 @@ function Navbar() {
     <motion.div
       layout
       transition={{ type: "spring", stiffness: 350, damping: 30 }}
-      className={`fixed top-10 right-6 md:top-12 md:right-12 lg:right-24 z-[100] overflow-hidden rounded-xl border shadow-xl ${
+      className={`fixed top-10 right-6 md:top-12 md:right-12 lg:right-24 z-[100] overflow-hidden rounded-lg border shadow-xl ${
         isInFooter 
           ? "border-white/10 bg-black/80 backdrop-blur-md text-white" 
           : "border-black/10 bg-white/95 backdrop-blur-md text-black"
@@ -91,19 +91,19 @@ function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(true)}
-            className={`flex cursor-pointer items-center justify-between gap-6 px-5 py-3 transition-colors sm:gap-12 sm:px-8 sm:py-4 ${
+            className={`flex cursor-pointer items-center justify-between gap-4 px-3 py-2 transition-colors sm:gap-6 sm:px-4 sm:py-2.5 ${
               isInFooter ? "hover:bg-white/10" : "hover:bg-black/5"
             }`}
           >
-            <span className="text-base font-bold tracking-wide md:text-lg">{activeTab}</span>
+            <span className="text-sm font-bold tracking-wide md:text-base">{activeTab}</span>
             
             <motion.svg
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -121,10 +121,10 @@ function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="flex min-w-[200px] flex-col p-6 sm:min-w-[240px] sm:p-8"
+            className="flex min-w-[160px] flex-col p-4 sm:min-w-[200px] sm:p-5"
           >
-            <div className="flex items-center justify-between pb-4 sm:pb-6">
-              <span className={`text-base font-bold tracking-wide md:text-lg ${
+            <div className="flex items-center justify-between pb-3 sm:pb-4">
+              <span className={`text-sm font-bold tracking-wide md:text-base ${
                 isInFooter ? "text-white" : "text-black"
               }`}>
                 {activeTab}
@@ -141,8 +141,8 @@ function Navbar() {
                   animate={{ rotate: 0, opacity: 1 }}
                   transition={{ duration: 0.3 }}
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -156,7 +156,7 @@ function Navbar() {
               </button>
             </div>
 
-            <div className="flex flex-col gap-5 pt-2 sm:gap-6">
+            <div className="flex flex-col gap-3 pt-2 sm:gap-4">
               {navItems.map((item) => {
                 const isActive = activeTab === item.name;
                 return (
@@ -164,7 +164,7 @@ function Navbar() {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => handleSmoothScroll(e, item.href.replace('#', ''), item.name)}
-                    className={`text-lg font-bold tracking-wide w-fit transition-all ${
+                    className={`text-base font-bold tracking-wide w-fit transition-all ${
                       isInFooter
                         ? isActive
                           ? "text-white underline underline-offset-8 decoration-2"
