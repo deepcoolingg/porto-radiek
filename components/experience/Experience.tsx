@@ -19,7 +19,7 @@ function Experience() {
           target="_blank" 
           rel="noopener noreferrer" 
           download="CV_Muhammad-Radiek-Fidiyanto.pdf"
-          className="rounded-full bg-white px-6 py-3 text-sm font-bold text-black transition-transform hover:scale-105"
+          className="rounded-3xl bg-white px-8 py-4 text-base font-bold text-black transition-transform hover:scale-105 md:px-10 md:py-5 md:text-lg"
         >
           View Resume
         </a>
