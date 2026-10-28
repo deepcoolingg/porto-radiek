@@ -67,7 +67,7 @@ export const projectsData = [
     url: "https://partistic.com",
     category: "Landing Page",
     year: "2026",
-    description: "Built a portfolio website to showcase exhibition installations and artwork, with a bold, gallery style UI. Used server-side rendering with Next.js to improve page load speed and navigation.",
+    description: "Built a portfolio website to showcase exhibition installations and artwork, with a bold, gallery style UI. Used server side rendering with Next.js to improve page load speed and navigation.",
     role: "Frontend Developer",
     tech: ["Next.js", "Tailwind CSS", "SEO"],
     imagePlaceholder: "/partistic.webp",
