@@ -19,6 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://radiek.online"),
   title: {
     default: "Muhammad Radiek | Software Developer",
     template: "%s | Muhammad Radiek", 
