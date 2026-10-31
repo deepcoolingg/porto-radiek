@@ -9,6 +9,7 @@ export const heroData = {
     highlight: "even under pressure.",
   },
   description: "Full stack developer focused on backend architecture, web development, and system integration. I enjoy building things that keep working well not just on launch day, but as traffic and complexity grow.",
+  resumeUrl: "/CV_Muhammad-Radiek-Fidiyanto.pdf",
   profile: {
     name: "Radiek Fidiyanto",
     title: "Software Developer",
@@ -121,7 +122,6 @@ export const techChipsData = [
 export const experienceData = {
   header: {
     title: "Education & Experience",
-    resumeUrl: "/CV_Muhammad-Radiek-Fidiyanto.pdf",
   },
   pusdatin: {
     description: "Worked on backend development for JakEdu, Pusdatin's internal education data platform, using Golang and PostgreSQL. Reduced API response time by around 15% and resolved 10-15 bugs through debugging and log analysis, while collaborating with the team to keep the system reliable and easy to maintain.",
@@ -140,8 +140,8 @@ export const experienceData = {
       label: "Cumulative GPA (Cumlaude)",
     },
     certifications: {
-      value: "3",
-      label: "Certifications - BNSP, IBM, Wadhwani Foundation",
+      value: "5",
+      label: "Certifications - Linux Foundation BNSP, IBM, Wadhwani Foundation, ELPT   ",
     },
   },
   organization: {

@@ -65,6 +65,25 @@ function Hero() {
                 {heroData.description}
               </p>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-6 sm:mt-8"
+            >
+              <a 
+                href={heroData.resumeUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                download="CV_Muhammad-Radiek-Fidiyanto.pdf"
+                className="inline-block rounded-2xl bg-white px-6 py-3 text-sm font-bold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:bg-gray-100 active:scale-95 sm:px-8 sm:py-4 sm:text-base md:px-10 md:py-4 md:text-lg"
+              >
+                View Resume
+              </a>
+            </motion.div>
+
+            
           </div>
 
           <motion.div

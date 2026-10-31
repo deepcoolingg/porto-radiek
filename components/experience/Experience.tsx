@@ -14,19 +14,9 @@ function Experience() {
         <h2 className="font-sans text-xl font-medium tracking-tight text-white sm:text-2xl md:text-3xl lg:text-4xl">
           {experienceData.header.title}
         </h2>
-        <a 
-          href={experienceData.header.resumeUrl} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          download="CV_Muhammad-Radiek-Fidiyanto.pdf"
-          className="rounded-2xl bg-white px-5 py-2.5 text-sm font-bold text-black transition-transform hover:scale-105 md:px-6 md:py-3 md:text-base"
-        >
-          View Resume
-        </a>
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-[repeat(3,minmax(220px,1fr))] will-change-transform">
-        
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

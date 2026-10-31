@@ -29,12 +29,24 @@ function Footer() {
             radikfidi20@gmail.com
           </h2>
           
-          <button 
-            onClick={() => window.open('https://wa.me/6285156057722', '_blank')}
-            className="rounded-full bg-black px-6 py-3 text-sm tracking-wide text-white transition-transform hover:scale-105 hover:bg-zinc-800 sm:px-8 sm:py-4"
-          >
-            Contact Me
-          </button>
+          <div className="flex flex-wrap gap-3 sm:gap-4">
+            <button 
+              onClick={() => window.open('https://wa.me/6285156057722', '_blank')}
+              className="rounded-full bg-black px-6 py-3 text-sm tracking-wide text-white transition-transform hover:scale-105 hover:bg-zinc-800 sm:px-8 sm:py-4"
+            >
+              Contact Me
+            </button>
+            
+            <a 
+              href="/CV_Muhammad-Radiek-Fidiyanto.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="CV_Muhammad-Radiek-Fidiyanto.pdf"
+              className="rounded-full bg-black px-6 py-3 text-sm tracking-wide text-white transition-transform hover:scale-105 hover:bg-zinc-800 sm:px-8 sm:py-4"
+            >
+              View Resume
+            </a>
+          </div>
         </div>
 
         <div className="mt-auto flex w-full flex-col">
